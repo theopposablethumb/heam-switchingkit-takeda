@@ -1,0 +1,12 @@
+<header>
+  <a href="/">
+    <img src="images/takeda-dakiyama.svg" alt="Takeda Logo" title="Takeda Logo" width="125px" height="70px" />
+  </a>
+  <nav>
+      <% menu.forEach(m => { %>
+        <a href="<%= m.url %>" class="<% m.url === path ? 'current' : '' %>"">
+          <%= m.name %>
+        </a>
+      <% }) %>
+  </nav>
+</header>
