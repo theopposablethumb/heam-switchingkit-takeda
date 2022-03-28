@@ -22,7 +22,7 @@ span { color: #e1242a; }
 .button span { color: #fff; }
 sup { vertical-align: text-bottom; font-size: 0.7em; }
 
-header, .hero, .content { margin: 0 auto; max-width: 950px; }
+header, .hero, .content { margin: 0 auto; max-width: 1200px; width: 80vw; }
 .content { margin-top: 2.5em; }
 footer { margin-top: 3em; padding: 0 1.4em 1em 1.4em; border-left: 0.6em solid #e1242a; }
 
@@ -34,6 +34,7 @@ nav a:hover { text-decoration: underline; color: #891515; }
 .greyBg { width: 100vw; background: #edf2f4; padding: 2em 0; margin: 2em 0 0; }
 
 .center { width: 90%; text-align: center; margin: 0 auto; }
+.full { width: 100%; box-sizing: border-box; padding: 0 1.6em 1.6em 1.6em; }
 .twoThirds { width: 70%; position: relative; }
 .twoThirds h1 {padding: 0 0 0 0.8em; border-left: 10px solid #e1242a; }
 .half { width: 48%; box-sizing: border-box; }
@@ -68,6 +69,11 @@ nav a:hover { text-decoration: underline; color: #891515; }
 .tile a.action::before { content: ''; display: block; height: 1.4em; width: 1.4em; position: absolute; top: 0.3em; left: 0; background: url('../images/video-icon.svg'); }
 .tile a.action[href$='.pdf']::before { background: url('../images/download-icon.svg'); }
 .tile a.action:hover, footer nav a:hover { text-decoration: underline; color: #e1242a; }
+
+.hs { background: url('../images/heamophilia-society-logo-splash.svg') no-repeat center right; flex-direction: row-reverse; }
+.hs div { width: 80%; }
+.hs div a { display: inline; padding: 0; background: none; font-weight: 300; }
+.hs img { width: 20%; }
 
 .hidden { display: none; }
 
@@ -105,12 +111,49 @@ footer img {position: absolute; top: 0; right: 0;}
 .cookiePopUp p.button { margin-top: 1em; }
 .actions { width: 20%; display: flex; justify-content: center; }
 
-@media screen and (max-width: 1024px) {
-  header, .hero, .content { margin: 0 auto; width: 90vw; }
-  .hero img { width: 90vw; }
-  .column { width: 30%; }
+@media screen and (max-width: 1600px) {
+  .hs img { width: 14%; margin-left: 6%; }
 }
 
+@media screen and (max-width: 1430px) {
+  .hs div { width: 75%; }
+  .hs img { width: 16%; margin: 2% 1% 0 8%; }
+}
+
+@media screen and (max-width: 1380px) {
+  .hs div { width: 65%; }
+  .hs img { width: 16%; margin: 2% 4% 0 15%; }
+}
+
+@media screen and (max-width: 1200px) {
+  .hs { background-position: right -20% top; }
+  .hs div { width: 50%; }
+  .hs img { width: 20%; margin: 2% 2% 0 28%; }
+}
+
+@media screen and (max-width: 1140px) {
+  .hs { background-position: right -30% top; }
+}
+
+@media screen and (max-width: 1060px) {
+  .hs { background-position: right -74% top; }
+}
+
+@media screen and (max-width: 1024px) {
+  header, .hero, .content { margin: 0 auto; width: 90vw; }
+  .content { margin-top: 2.5em; }
+  .hero img { width: 90vw; }
+  .column { width: 30%; }
+  .hs { background-position: right -30% top; }
+  .hs img { width: 20%; margin-left: 28%; margin-top: 2%; }
+}
+
+@media screen and (max-width: 900px) {
+  .hs.flex { display: block; }
+  .hs.full { background: none; position: relative; padding: 0; }
+  .hs div { width: 100%; padding: 0.8em 1.6em 1.6em; box-sizing: border-box; }
+  .hs img { width: 100%; height: 100px; border-radius: 12px 12px 0 0; padding: 4em 0; margin: 0; display: block; background: #C41718; }
+}
 
 @media screen and (max-width: 400px) {
   header, .hero, .content { margin: 0 auto; width: 100vw; }
