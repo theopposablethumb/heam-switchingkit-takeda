@@ -9,11 +9,7 @@
     <title>Takeda - Maintenance Page</title>
     <meta name="description" content="Links to art tutorials and learning resources, structured in a way to help anyone to learn to draw and paint to a professional standard." />
     <link href="styles/styles.css" rel="stylesheet">
-    <script src="js/cookies.js"></script>
     <script src="js/scripts.js"></script>
-    <script>
-
-    </script>
   </head>
   <body>
     <header>
@@ -21,9 +17,7 @@
         <img src="images/takeda-dakiyama.svg" alt="Takeda Logo" title="Takeda Logo" width="125px" height="70px" />
       </a>
       <nav>
-        <a href="./advate.html">ADVATE</a>
-        <a href="./advate-resources.html">ADVATE resources</a>
-        <a href="./adyvoni.html">ADYVONI</a>
+        <a class="current" href="./adyvoni.html">ADYVONI</a>
         <a href="./adyvoni-resources.html">ADYVONI resources</a>
         <a href="./living-with-haemophilia.html">Living with Haemophilia resources</a>
       </nav>
@@ -31,31 +25,60 @@
 
     <main>
       <div class="hero">
-        <img src="./images/man-kayaking-hero.jpg" alt="hero image" title="something or other" />
+        <img src="./images/father-and-son-playing.jpg" alt="Father and son playing outdoors" title="Resources for Advate"  />
       </div>
 
       <div class="content">
-        <div class="center">
-          <h1>Welcome to the ADVATE<sup>&reg;</sup> (octocog alfa) & ADYNOVI<sup>&reg;</sup>&#9660; (rurioctocog alfa pegol) patient website</h1>
-          <p class="intro">Which of the following best describes your situation?</p>
+        <div class="twoThirds">
+          <h1>ADYNOVI<sup>&reg;</sup>&#9660 (rurioctocog alfa pegol) – for the treatment of haemophilia A in adults and children over 12 years of age</h1>
+          <p>Welcome to the ADYNOVI patient website.</p>
+          <p>Your haemophilia treatment centre has provided you with access to this Takeda-developed website because they have prescribed ADYNOVI for you as a treatment or a preventative treatment (prophylaxis) for haemophilia A.</p>
+          <p>Here you will ﬁnd information about haemophilia (including symptoms and key facts), support regarding your treatment with ADYNOVI, and sources of further advice and information.</p>
         </div>
       </div>
 
       <div class="content">
         <div class="flex">
-          <div class="thirds box">
-            <p>I live in the UK and I have been prescribed <span>ADYNOVI<sup>&reg;</sup></span></p>
-            <a href="./adyvoni.html" class="button">Enter</a>
+
+          <div class="half box">
+            <a href="./adyvoni-resources.html" class="action">ADYVONI patient resources</a>
           </div>
-          <div class="thirds box">
-            <p>I live in the UK and I have been prescribed <span>ADVATE<sup>&reg;</sup></span></p>
-            <a href="./advate.html" class="button">Enter</a>
+
+          <div class="half box">
+            <a href="./living-with-haemophilia.html" class="action">Living with Haemophilia resources</a>
           </div>
-          <div class="thirds box">
-            <p>I have not been prescribed ADYNOVI or ADVATE or I do not live in the UK</p>
-            <a href="https://google.co.uk" class="button">Enter</a>
-          </div>
+
         </div>
+      </div>
+
+      <div class="greyBg">
+        <div class="content">
+          <div class="flex">
+
+            <div class="half tile">
+              <img src="./images/heamophilia-society-logo.svg" alt="The Haemophilia Society Logo" title="The Haemophilia Society" />
+              <div>
+                <h2>The Haemophilia Society</h2>
+                <p>The Haemophilia Society is an active support group for people with haemophilia and their families, and provides lots of up-to-date information and individual support on the management and treatment of haemophilia, and about living with the condition. Many people with haemophilia gain great support from other patients. The Society also offers a unique opportunity for people affected by haemophilia to get in touch with other people in similar circumstances.</p>
+                <p>For further information about the Haemophilia Society:</p>
+                <a class="button" href="https://haemophilia.org.uk">Visit the Haemophilia Society Website</a>
+              </div>
+            </div>
+
+            <div class="half tile">
+              <img src="./images/we-bleed-differently-logo.svg" alt="The We Bleed Differently Logo" title="We Bleed Differently" />
+              <div>
+                <h2>We Bleed Differently</h2>
+                <p>The We Bleed Differently (WBD) campaign has been initiated and funded by Takeda, and developed together with The Haemophilia Society.</p>
+                <p>We Bleed Differently is a campaign to provide practical support tools for people with bleeding disorders and their care teams. We want to support people with bleeding disorders and healthcare professionals to have the discussions that enable people with bleeding disorders to live the life they want to. Takeda is delighted to be partnering with The Haemophilia Society in this campaign and their ongoing work to support, inform and inspire all members of the bleeding disorder community.</p>
+                <p>For further information about the WBD campaign:</p>
+                <a class="button" href="https://www.webleeddifferently.co.uk">Visit the We Bleed Differently website</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
       </div>
 
       <div class="backdrop hidden"><!-- --></div>
@@ -71,19 +94,11 @@
       </div>
 
     </main>
-    <div class="cookiePopUp flex">
-      <div>
-        <p>Cookies!</p>
-      </div>
-      <div class="actions">
-        <p class="button acceptCookie">Accept</p>
-        <p class="button ghost declineCookie">Decline</p>
-      </div>
-    </div>
+
     <footer>
       <div>
         <nav>
-          <<a href="https://www.takeda.com/en-gb/terms-of-use/">Terms of use</a>
+          <a href="https://www.takeda.com/en-gb/terms-of-use/">Terms of use</a>
           <a href="https://www.takeda.com/en-gb/privacy-notice/">Privacy notice</a>
           <a href="/">Contact and reporting adverse effects</a>
         </nav>
@@ -91,7 +106,7 @@
         <p><strong>www.haemapatientresources.co.uk</strong> has been developed by Takeda UK Limited as an educational resource for healthcare providers and people living with haemophilia A.</p>
         <p>The information provided is not a substitute for professional and/or medical advice. Please consult a healthcare professional or your haemophilia treatment centre for further advice.</p>
         <p>You can help by reporting any side eﬀects you may get. If you get any side eﬀects, talk to your doctor, pharmacist or nurse. This includes any possible side eﬀects not listed on this website or in the package leaﬂet. You can report side eﬀects directly via the Yellow Card Scheme at: <a href="https://www.mhra.gov.uk/yellowcard">www.mhra.gov.uk/yellowcard</a> or search for MHRA Yellow Card in the Google Play or Apple App Store.</p>
-        <p>By reporting side eﬀects you can help provide more information on the safety of these medicines.</p>
+          <p>By reporting side eﬀects you can help provide more information on the safety of these medicines.</p>
         <div>
           <p>C-ANPROM/GB/ADV/0010 March 2022</p>
           <p class="copyright">Initiated and funded by Takeda UK Ltd. &copy; <span>year</span> Takeda Pharmaceutical Company Limited. All rights reserved.</p>

@@ -48,21 +48,24 @@ nav a:hover { text-decoration: underline; color: #891515; }
 .greyBg .half { padding: 2em; }
 .greyBg.resources .half { padding: 0; }
 
-.hero img {border-radius: 0 0 0 2em;}
+.hero img {border-radius: 0 0 0 2em; width: 100%; }
 
 .flex { display: flex; }
 .wrap {  flex-wrap: wrap; }
 
 .box { box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15); border: 1px solid #e1242a; }
 .box, .tile { border-radius: 12px; margin-bottom: 1.6em; }
-.box a { font-weight: 700; display: block; padding: 1.8em 2em; background: no-repeat 25em center url(../images/left-arrow-icon.svg); background-size: 8%; }
+.box a.action { font-weight: 700; text-decoration: none; color: #222; display: block; padding: 1.8em 2em; background: no-repeat right 1em center url(../images/left-arrow-icon.svg); background-size: 8%; }
+.box a.action:hover { color: #891515; text-decoration: underline; }
 
 .tile { background: #f7f7f7; }
 .resources .tile div { padding: 0.8em; }
 .tile h2, .warning h2 { margin: 0; }
 .tile h2 { border: none; padding: 0; }
-.tile img { border-radius: 2px; box-shadow: 2px 3px 3px 0 rgba(0, 0, 0, 0.15); margin: 1em; }
-.tile img.video, .tile img[src$=".svg"] { margin: 0; box-shadow: none; border: none; }
+.tile figure { margin: 1em; }
+.tile figure.video {margin: 0; }
+.tile img { border-radius: 2px; box-shadow: 2px 3px 3px 0 rgba(0, 0, 0, 0.15); }
+.tile .video img, .tile img[src$=".svg"] { box-shadow: none; border: none; }
 .tile img[src$='.svg'] { height: 6em; margin-bottom: 1.6em; }
 .tile a.button { text-transform: uppercase; padding: 0.8em 1.6em; }
 .tile a.action { display: inline-block; position: relative; padding: 0.2em 2em 0.2em; text-transform: uppercase; text-decoration: none; font-weight: 600; color: #222; }
@@ -103,7 +106,7 @@ footer nav a:last-child { display: inline-block; border-bottom: 1px solid #e1242
 footer nav a:last-child:hover { text-decoration: none; }
 footer p { font-size: 0.8em; margin: 0.5em 0 0 0; }
 footer span { color: #222; }
-footer div div { margin-top: 1em; }
+footer div div { margin-top: 2.2em; }
 footer img {position: absolute; top: 0; right: 0;}
 
 .cookiePopUp { position: fixed; left: 0; bottom: 0; z-index: 3; padding: 1em 2em; box-sizing: border-box; width: 100vw; height: fit-content; background: #f7f7f7; box-shadow:  0 -3px 6px 0 rgba(0, 0, 0, 0.15);}
