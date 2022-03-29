@@ -33,19 +33,19 @@ Router.get('/advate-resources', (req, res, next) => {
 });
 
 
-Router.get('/adyvoni', (req, res, next) => {
-  res.render('adyvoni', {
+Router.get('/adynovi', (req, res, next) => {
+  res.render('adynovi', {
     docTitle: 'ADYNOVI (rurioctocog alfa pegol) – for the treatment of haemophilia A | Takeda',
-    menu: navigation.adyvoniNav,
-    path: '/adyvoni'
+    menu: navigation.adynoviNav,
+    path: '/adynovi'
   });
 });
 
-Router.get('/adyvoni-resources', (req, res, next) => {
-  res.render('adyvoni-resources', {
+Router.get('/adynovi-resources', (req, res, next) => {
+  res.render('adynovi-resources', {
     docTitle: 'ADYNOVI (rurioctocog alfa pegol) resources for patients | Takeda',
-    menu: navigation.adyvoniNav,
-    path: '/adyvoni-resources'
+    menu: navigation.adynoviNav,
+    path: '/adynovi-resources'
   });
 });
 
@@ -55,6 +55,22 @@ Router.get('/living-with-haemophilia', (req, res, next) => {
     menu: navigation.fullNav,
     path: '/living-with-haemophilia'
   });
-});
+})
+
+Router.get('/terms-of-use', (req, res, next) => {
+  res.render('terms', {
+    docTitle: 'Contact and reporting Adverse Effects | Takeda',
+    menu: navigation.fullNav,
+    path: '/terms-of-use'
+  });
+})
+
+Router.get('/contact', (req, res, next) => {
+  res.render('contact', {
+    docTitle: 'Contact and reporting Adverse Effects | Takeda',
+    menu: navigation.fullNav,
+    path: '/contact'
+  });
+})
 
 module.exports = Router;

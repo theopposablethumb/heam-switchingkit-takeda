@@ -18,7 +18,6 @@ a.button:hover, p.button:hover { background: #891515;}
 .button.ghost:hover { border: 2px solid #e1242a; background: #e1242a; color: #fff; border: none; }
 .red { color: #e1242a; }
 
-span { color: #e1242a; }
 .button span { color: #fff; }
 sup { vertical-align: text-bottom; font-size: 0.7em; }
 
@@ -26,6 +25,7 @@ header, .hero, .content { margin: 0 auto; max-width: 1200px; width: 80vw; }
 .content { margin-top: 2.5em; }
 footer { margin-top: 3em; padding: 0 1.4em 1em 1.4em; border-left: 0.6em solid #e1242a; }
 
+header button { display: none; }
 nav { float: right; }
 nav a { display: inline-block; padding: 1.5em 0.8em; text-decoration: none; color: #222; }
 nav a.current { font-weight: 700; color: #e1242a; }
@@ -53,10 +53,11 @@ nav a:hover { text-decoration: underline; color: #891515; }
 .flex { display: flex; }
 .wrap {  flex-wrap: wrap; }
 
-.box { box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15); border: 1px solid #e1242a; }
+.box { box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15); border: 1px solid #000; }
 .box, .tile { border-radius: 12px; margin-bottom: 1.6em; }
-.box a.action { font-weight: 700; text-decoration: none; color: #222; display: block; padding: 1.8em 2em; background: no-repeat right 1em center url(../images/left-arrow-icon.svg); background-size: 8%; }
+.box a.action { font-weight: 700; text-decoration: none; color: #222; display: block; padding: 1.8em 5em 1.8em 2em; background: no-repeat right 1em center url(../images/left-arrow-icon.svg); background-size: 8%; }
 .box a.action:hover { color: #891515; text-decoration: underline; }
+footer .box { box-shadow: none; width: 100%; padding: 1em; }
 
 .tile { background: #f7f7f7; }
 .resources .tile div { padding: 0.8em; }
@@ -159,16 +160,54 @@ footer img {position: absolute; top: 0; right: 0;}
 }
 
 @media screen and (max-width: 400px) {
+  header { position: relative; }
+  header button { position: absolute; top: 1.75em; right: 2em; border: none; height: 1.5em; width: 2.5em; display: block;
+    background: linear-gradient(
+      to bottom,
+      #999,
+      #999 12%,
+      #f7f7f7 12%,
+      #f7f7f7 43%,
+      #999 43%,
+      #999 57%,
+      #f7f7f7 57%,
+      #f7f7f7 88%,
+      #999 88%,
+      #999 100%
+    );
+    transition: linear-gradient 1s;
+  }
+
+  header button.menu.active:before {
+    background: linear-gradient(
+      to bottom,
+      #07323d,
+      #07323d 40%,
+      #d3f1f1 40%,
+      #d3f1f1 60%,
+      #07323d 60%,
+      #07323d 100%
+    );
+  }
+
+
   header, .hero, .content { margin: 0 auto; width: 100vw; }
-  .hero img { width: 100vw; }
-  .center, .column, .tile, footer div { width: 90vw; margin: 0 auto 1.6em auto; }
-  .half { width: 80vw; padding: 0 5vw; margin: 0 auto; }
+  .hero img { display: block; }
+  .hero img, .content, footer div { width: 90vw; margin: 0 auto; }
+  .tile, .full, .half, .twoThirds, .thirds { width: 100%; }
+  .thirds { margin-right: 0; margin-top: 0; }
+  .thirds:first-of-type, .half:first-of-type { margin-top: 3em; }
+  header nav { width: 100vw; }
+  header nav a { display: block; border: 1px solid #edf2f4; text-align: right; padding: 1em 5vw; }
+  .greyBg { margin-bottom: 3em; }
+  .half { padding: 0 5vw; }
   div.half::before { height: 21em; }
-  .resources h2 { margin: 1em 5vw; }
-  .tile { display: block; }
+
+  .tile { display: block; margin-top: 1em; }
   .tile img { display: block; margin: 0.8em auto; }
   .tile img.video { display: block; margin: 0.8em auto; } /* need a wrapper here to make video image change aspect ratio */
   .column:last-child, .tile:nth-child(odd) { margin-right: auto; }
+
   .dialog, div.video { width: 90vw; box-sizing: border-box; }
   footer img { width: 100px; height: 55px; }
 }
