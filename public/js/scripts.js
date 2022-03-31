@@ -33,7 +33,7 @@ const externalLinkWarning = () => {
 
 const closeExternalLinkWarning = () => {
   const dialog = document.querySelector('.dialog');
-  const back =  dialog.querySelector('.button');
+  const back =  dialog.querySelector('p.button');
   const externalLink = dialog.querySelector('a');
   const displayLink = dialog.querySelector('a span');
 
@@ -70,6 +70,16 @@ const video = () => {
   );
 }
 
+const openNavigation = () => {
+  const nav = document.querySelector('header nav');
+  const burger = document.querySelector('header button');
+
+  burger.addEventListener('click', (e) => {
+    nav.classList.toggle('show');
+    nav.classList.toggle('hide');
+  })
+}
+
 const copyrightYear = () => {
   document.querySelector('.copyright span').innerHTML = new Date().getFullYear();
 }
@@ -81,6 +91,7 @@ const makeItSo = () => {
     closeExternalLinkWarning();
     copyrightYear();
     video();
+    openNavigation();
     console.log("This website crafted by hand by Brendan Meachen");
  });
 };

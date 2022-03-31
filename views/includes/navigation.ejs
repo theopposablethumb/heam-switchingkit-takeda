@@ -3,7 +3,7 @@
     <img src="images/takeda-dakiyama.svg" alt="Takeda Logo" title="Takeda Logo" width="125px" height="70px" />
   </a>
   <button></button>
-  <nav>
+  <nav class="hide">
       <% menu.forEach(m => { %>
         <a href="<%= m.url %>" class="<% m.url === path ? 'current' : '' %>"">
           <%= m.name %>

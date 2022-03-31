@@ -53,11 +53,11 @@ nav a:hover { text-decoration: underline; color: #891515; }
 .flex { display: flex; }
 .wrap {  flex-wrap: wrap; }
 
-.box { box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15); border: 1px solid #000; }
+.box { box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15); border: 1px solid #e1242a; }
 .box, .tile { border-radius: 12px; margin-bottom: 1.6em; }
 .box a.action { font-weight: 700; text-decoration: none; color: #222; display: block; padding: 1.8em 5em 1.8em 2em; background: no-repeat right 1em center url(../images/left-arrow-icon.svg); background-size: 8%; }
 .box a.action:hover { color: #891515; text-decoration: underline; }
-footer .box { box-shadow: none; width: 100%; padding: 1em; }
+footer .box { box-shadow: none; width: 95%; padding: 1em; box-sizing: border-box;}
 
 .tile { background: #f7f7f7; }
 .resources .tile div { padding: 0.8em; }
@@ -109,10 +109,11 @@ footer p { font-size: 0.8em; margin: 0.5em 0 0 0; }
 footer span { color: #222; }
 footer div div { margin-top: 2.2em; }
 footer img {position: absolute; top: 0; right: 0;}
+footer .box { border-color: #222; }
 
 .cookiePopUp { position: fixed; left: 0; bottom: 0; z-index: 3; padding: 1em 2em; box-sizing: border-box; width: 100vw; height: fit-content; background: #f7f7f7; box-shadow:  0 -3px 6px 0 rgba(0, 0, 0, 0.15);}
 .cookiePopUp div:first-of-type { width: 80%; }
-.cookiePopUp p.button { margin-top: 1em; }
+.cookiePopUp p.button { margin: 1em 1em 0 0; }
 .actions { width: 20%; display: flex; justify-content: center; }
 
 @media screen and (max-width: 1600px) {
@@ -122,17 +123,23 @@ footer img {position: absolute; top: 0; right: 0;}
 @media screen and (max-width: 1430px) {
   .hs div { width: 75%; }
   .hs img { width: 16%; margin: 2% 1% 0 8%; }
+  .dialog { width: 60vw; }
 }
 
 @media screen and (max-width: 1380px) {
   .hs div { width: 65%; }
   .hs img { width: 16%; margin: 2% 4% 0 15%; }
+  .cookiePopUp div:first-of-type { width: 70%; }
+  .actions { width: 30%; }
+  .actions .button { padding: 0.75em 2em; }
 }
 
 @media screen and (max-width: 1200px) {
+  header, .hero, .content { width: 90vw; }
   .hs { background-position: right -20% top; }
   .hs div { width: 50%; }
   .hs img { width: 20%; margin: 2% 2% 0 28%; }
+  .thirds { width: 31%; }
 }
 
 @media screen and (max-width: 1140px) {
@@ -150,6 +157,7 @@ footer img {position: absolute; top: 0; right: 0;}
   .column { width: 30%; }
   .hs { background-position: right -30% top; }
   .hs img { width: 20%; margin-left: 28%; margin-top: 2%; }
+  .dialog { width: 70vw; }
 }
 
 @media screen and (max-width: 900px) {
@@ -157,9 +165,9 @@ footer img {position: absolute; top: 0; right: 0;}
   .hs.full { background: none; position: relative; padding: 0; }
   .hs div { width: 100%; padding: 0.8em 1.6em 1.6em; box-sizing: border-box; }
   .hs img { width: 100%; height: 100px; border-radius: 12px 12px 0 0; padding: 4em 0; margin: 0; display: block; background: #C41718; }
-}
 
-@media screen and (max-width: 400px) {
+  header, .hero, .content { margin: 0 auto; width: 100vw; }
+
   header { position: relative; }
   header button { position: absolute; top: 1.75em; right: 2em; border: none; height: 1.5em; width: 2.5em; display: block;
     background: linear-gradient(
@@ -190,24 +198,56 @@ footer img {position: absolute; top: 0; right: 0;}
     );
   }
 
+  @keyframes show {
+    from { height: 0; }
+    to { height: 16em; }
+  }
 
-  header, .hero, .content { margin: 0 auto; width: 100vw; }
+  @keyframes hide {
+    from { height: 16em; }
+    to { height: 0; }
+  }
+
+  header nav { width: 100vw; height: 0; overflow: hidden; }
+  header nav.show { height: 16em; overflow: visible; animation-name: show; animation-duration: 0.2s; }
+  header nav.hide { animation-name: hide; animation-duration: 0.2s; }
+  header nav a { display: block; border: 1px solid #edf2f4; text-align: right; padding: 1em 5vw; }
+
+  h1 { font-size: 1.75em; margin-bottom: 1.2em; }
+  p.intro { font-size: 1.4em; }
+
   .hero img { display: block; }
   .hero img, .content, footer div { width: 90vw; margin: 0 auto; }
+
+  .greyBg { margin-bottom: 3em; padding: 1.4em 0; }
+  .half { padding: 0 5vw; }
+  .half.box { padding: 0; }
   .tile, .full, .half, .twoThirds, .thirds { width: 100%; }
   .thirds { margin-right: 0; margin-top: 0; }
-  .thirds:first-of-type, .half:first-of-type { margin-top: 3em; }
-  header nav { width: 100vw; }
-  header nav a { display: block; border: 1px solid #edf2f4; text-align: right; padding: 1em 5vw; }
-  .greyBg { margin-bottom: 3em; }
-  .half { padding: 0 5vw; }
+  .thirds.box:first-of-type { margin-top: 2.4em; }
+  .half:nth-child(odd) { margin-right: 0;;}
+
+  .box { margin-bottom: 2em; }
   div.half::before { height: 21em; }
 
-  .tile { display: block; margin-top: 1em; }
+  .tile { display: block; margin-top: 0; }
+  .tile a.button { text-align: center; }
   .tile img { display: block; margin: 0.8em auto; }
   .tile img.video { display: block; margin: 0.8em auto; } /* need a wrapper here to make video image change aspect ratio */
   .column:last-child, .tile:nth-child(odd) { margin-right: auto; }
 
+  .thirds.box p { line-height: 1.4em; }
+
   .dialog, div.video { width: 90vw; box-sizing: border-box; }
   footer img { width: 100px; height: 55px; }
+  footer div.box { margin: 1.6em 0; }
+
+  .cookiePopUp.flex { display: block; }
+  .cookiePopUp div:first-of-type { width: 100%; text-align: center; }
+  .actions { width: 100%; }
+  .actions .button { padding: 0.6em 5em;}
+}
+
+@media screen and (max-width: 600px) {
+
 }
