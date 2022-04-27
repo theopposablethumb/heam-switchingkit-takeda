@@ -5,7 +5,7 @@
   <button></button>
   <nav class="hide">
       <% menu.forEach(m => { %>
-        <a href="<%= m.url %>" class="<% m.url === path ? 'current' : '' %>"">
+        <a href="<%= m.url %>" class="<%= m.url === path.replace('/', '') ? 'current' : '' %>">
           <%= m.name %>
         </a>
       <% }) %>

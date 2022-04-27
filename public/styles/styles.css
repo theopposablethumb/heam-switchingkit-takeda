@@ -19,7 +19,7 @@ a.button:hover, p.button:hover { background: #891515;}
 .red { color: #e1242a; }
 
 .button span { color: #fff; }
-sup { vertical-align: text-bottom; font-size: 0.7em; }
+sup { font-size: 0.5em; padding-bottom: 0.5em; display: inline-block; line-height: 1.4em; }
 
 header, .hero, .content { margin: 0 auto; max-width: 1200px; width: 80vw; }
 .content { margin-top: 2.5em; }
@@ -31,7 +31,7 @@ nav a { display: inline-block; padding: 1.5em 0.8em; text-decoration: none; colo
 nav a.current { font-weight: 700; color: #e1242a; }
 nav a:hover { text-decoration: underline; color: #891515; }
 
-.greyBg { width: 100vw; background: #edf2f4; padding: 2em 0; margin: 2em 0 0; }
+.greyBg { width: 100vw; background: #edf2f4; padding: 3em 0; margin: 2em 0 0; }
 
 .center { width: 90%; text-align: center; margin: 0 auto; }
 .full { width: 100%; box-sizing: border-box; padding: 0 1.6em 1.6em 1.6em; }
@@ -39,7 +39,7 @@ nav a:hover { text-decoration: underline; color: #891515; }
 .twoThirds h1 {padding: 0 0 0 0.8em; border-left: 10px solid #e1242a; }
 .half { width: 48%; box-sizing: border-box; }
 .half:nth-child(odd) { margin-right: 2%; }
-.thirds { width: 31.5%; text-align: center; margin-top: 3em; margin-right: 1.6em; padding: 2.5em 2em; box-sizing: border-box; }
+.thirds { width: 31.5%; text-align: center; margin-top: 3em; margin-right: 1.6em; padding: 2.5em 2em 1em 2em; box-sizing: border-box; }
 .thirds:last-child, .half:last-child { margin-right: 0; }
 .thirds p { font-weight: 600; }
 
@@ -54,10 +54,14 @@ nav a:hover { text-decoration: underline; color: #891515; }
 .wrap {  flex-wrap: wrap; }
 
 .box { box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15); border: 1px solid #e1242a; }
-.box, .tile { border-radius: 12px; margin-bottom: 1.6em; }
+.rounded, .tile { border-radius: 12px; margin-bottom: 1.6em; }
 .box a.action { font-weight: 700; text-decoration: none; color: #222; display: block; padding: 1.8em 5em 1.8em 2em; background: no-repeat right 1em center url(../images/left-arrow-icon.svg); background-size: 8%; }
 .box a.action:hover { color: #891515; text-decoration: underline; }
-footer .box { box-shadow: none; width: 95%; padding: 1em; box-sizing: border-box;}
+
+.box p { font-size: 1.25em; }
+.box.hs p { font-size: 1em; }
+footer .box p { font-size: 0.8em; }
+.box p.small { font-size: 0.8em; font-weight: 400; margin-top: 4em; }
 
 .tile { background: #f7f7f7; }
 .resources .tile div { padding: 0.8em; }
@@ -92,29 +96,28 @@ footer .box { box-shadow: none; width: 95%; padding: 1em; box-sizing: border-box
 }
 
 .backdrop { position: fixed; z-index: 1;top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.5); animation-name: darken; animation-duration: 0.2s; backdrop-filter: blur(2px); }
-.dialog, div.video { position: fixed; z-index: 2; top: 6em; left: 50%; transform: translate(-50%, 0); box-shadow:  0 3px 6px 0 rgba(0, 0, 0, 0.15); animation-name: appear; animation-duration: 0.1s; opacity: 1; width: fit-content; height: fit-content; }
+.dialog, div.video { position: fixed; z-index: 2; top: 6em; left: 50%; transform: translate(-50%, 0); box-shadow:  0 12px 12px 0 rgba(0, 0, 0, 0.15); animation-name: appear; animation-duration: 0.1s; opacity: 1; width: fit-content; height: fit-content; }
 div.video { padding: 0; }
 div.video .close { position: absolute; top: 0; right: 1em; color: #fff; text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5); }
-.dialog { width: 40vw; box-sizing: border-box; background: #f7f7f7; border-radius: 4px; padding: 3em; text-align: center; }
+.dialog { width: 45vw; box-sizing: border-box; background: #f7f7f7; border-radius: 4px; padding: 3em; text-align: center; padding: 2em; }
+.dialog h3 { margin: 0 0 1em 0; }
 .dialog .flex { justify-content: space-around; }
-.dialog .button:first-child { margin-right: 1em; }
+.dialog .button { width: 45%; padding: 1em 0.5em; vertical-align: text-center; }
+.dialog p.link.button { margin-top: 1em; }
 
 footer { position: relative; }
 footer div { width: 75%; }
 footer nav { margin-bottom: 2em; float: none; }
 footer nav a { display: block;  padding: 0.3em 0.6em 0.3em 0; font-weight: 700;}
-footer nav a:last-child { display: inline-block; border-bottom: 1px solid #e1242a; padding: 0.3em 0 0.1em 0; }
-footer nav a:last-child:hover { text-decoration: none; }
+/* footer nav a:last-child { display: inline-block; border-bottom: 1px solid #e1242a; padding: 0.3em 0 0.1em 0; } */
+/* footer nav a:last-child:hover { text-decoration: none; } */
 footer p { font-size: 0.8em; margin: 0.5em 0 0 0; }
 footer span { color: #222; }
 footer div div { margin-top: 2.2em; }
 footer img {position: absolute; top: 0; right: 0;}
-footer .box { border-color: #222; }
-
-.cookiePopUp { position: fixed; left: 0; bottom: 0; z-index: 3; padding: 1em 2em; box-sizing: border-box; width: 100vw; height: fit-content; background: #f7f7f7; box-shadow:  0 -3px 6px 0 rgba(0, 0, 0, 0.15);}
-.cookiePopUp div:first-of-type { width: 80%; }
-.cookiePopUp p.button { margin: 1em 1em 0 0; }
-.actions { width: 20%; display: flex; justify-content: center; }
+footer .box, .box.ade { border-color: #222; box-shadow: none; width: 95%; padding: 1em; box-sizing: border-box; margin-top: 1em;}
+.box.ade p { font-size: 1em; }
+.box.ade p:first-child { margin-top: 0; }
 
 @media screen and (max-width: 1600px) {
   .hs img { width: 14%; margin-left: 6%; }
@@ -129,7 +132,6 @@ footer .box { border-color: #222; }
 @media screen and (max-width: 1380px) {
   .hs div { width: 65%; }
   .hs img { width: 16%; margin: 2% 4% 0 15%; }
-  .cookiePopUp div:first-of-type { width: 70%; }
   .actions { width: 30%; }
   .actions .button { padding: 0.75em 2em; }
 }
@@ -143,11 +145,11 @@ footer .box { border-color: #222; }
 }
 
 @media screen and (max-width: 1140px) {
-  .hs { background-position: right -30% top; }
+  .hs { background-position: right -15% top; }
 }
 
 @media screen and (max-width: 1060px) {
-  .hs { background-position: right -74% top; }
+  .hs { background-position: right -30% top; }
 }
 
 @media screen and (max-width: 1024px) {
@@ -213,7 +215,7 @@ footer .box { border-color: #222; }
   header nav.hide { animation-name: hide; animation-duration: 0.2s; }
   header nav a { display: block; border: 1px solid #edf2f4; text-align: right; padding: 1em 5vw; }
 
-  h1 { font-size: 1.75em; margin-bottom: 1.2em; }
+  h1 { font-size: 1.6em; margin-bottom: 1.2em; }
   p.intro { font-size: 1.4em; }
 
   .hero img { display: block; }
@@ -225,27 +227,28 @@ footer .box { border-color: #222; }
   .tile, .full, .half, .twoThirds, .thirds { width: 100%; }
   .thirds { margin-right: 0; margin-top: 0; }
   .thirds.box:first-of-type { margin-top: 2.4em; }
-  .half:nth-child(odd) { margin-right: 0;;}
+  .half:nth-child(odd) { margin-right: 0; }
 
   .box { margin-bottom: 2em; }
+  .box:first-of-type { margin-top: 3em; }
   div.half::before { height: 21em; }
+
+  .box a.action { padding: 1.5em 5em 1.5em 1.5em; }
 
   .tile { display: block; margin-top: 0; }
   .tile a.button { text-align: center; }
-  .tile img { display: block; margin: 0.8em auto; }
+  .tile img { display: block; margin: 0.8em 0; }
   .tile img.video { display: block; margin: 0.8em auto; } /* need a wrapper here to make video image change aspect ratio */
   .column:last-child, .tile:nth-child(odd) { margin-right: auto; }
 
   .thirds.box p { line-height: 1.4em; }
 
   .dialog, div.video { width: 90vw; box-sizing: border-box; }
+  .dialog .button { width: 100%; padding: 1em 0.5em; vertical-align: text-center; }
   footer img { width: 100px; height: 55px; }
+  footer nav a { padding: 0.6em 0.6em 0.6em 0}
   footer div.box { margin: 1.6em 0; }
 
-  .cookiePopUp.flex { display: block; }
-  .cookiePopUp div:first-of-type { width: 100%; text-align: center; }
-  .actions { width: 100%; }
-  .actions .button { padding: 0.6em 5em;}
 }
 
 @media screen and (max-width: 600px) {

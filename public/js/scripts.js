@@ -16,7 +16,7 @@ const externalLinkWarning = () => {
   const dialog = document.querySelector('.dialog');
   const externalLink = dialog.querySelector('a');
   const displayLink = dialog.querySelector('a span');
-  const external = document.querySelectorAll('a[href*="http"');
+  const external = document.querySelectorAll('a[href*="http"]');
   let link;
 
   external.forEach((a) =>

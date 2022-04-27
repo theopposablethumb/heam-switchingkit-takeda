@@ -1,12 +1,4 @@
-<div class="cookiePopUp flex wrap">
-  <div>
-    <p>This site uses cookies. By continuing to browse the site, you are agreeing to our use of cookies. <a href="https://www.takeda.com/en-gb/privacy-notice/">Find out more in our Privacy Policy</a>.</p>
-  </div>
-  <div class="actions">
-    <p class="button acceptCookie">Accept</p>
-    <p class="button ghost declineCookie">Decline</p>
-  </div>
-</div>
+
 <footer>
   <div>
     <nav>
@@ -14,19 +6,35 @@
       <a href="https://www.takeda.com/en-gb/privacy-notice/">Privacy notice</a>
       <a href="/contact">Contact and reporting adverse effects</a>
     </nav>
-    <% if (path !== '/living-with-haemophilia') { %>
-    <p><strong>IMPORTANT NOTICE:</strong> This information is only intended for UK patients who have been prescribed ADVATE or ADYNOVI by a healthcare professional.</p>
+
+    <% if (path === '/advate' || path === '/advate-resources') { %>
+      <p><strong>IMPORTANT NOTICE:</strong> This information is only intended for UK patients who have been prescribed ADVATE by a healthcare professional.</p>
+      <p><strong>www.haemapatientresources.co.uk</strong> has been developed by Takeda UK Limited as an educational resource for people living with haemophilia A who have been prescribed ADVATE<sup>&reg;</sup> (octocog alfa) in the UK.</p>
+    <% } else if (path === '/adynovi' || path === '/adynovi-resources' ) { %>
+      <p><strong>IMPORTANT NOTICE:</strong> This information is only intended for UK patients who have been prescribed ADYNOVI by a healthcare professional.</p>
+      <p><strong>www.haemapatientresources.co.uk</strong> has been developed by Takeda UK Limited as an educational resource for people living with haemophilia A who have been prescribed ADYNOVI<sup>&reg;</sup> (rurioctocog alfa pegol) in the UK.</p>
+    <% } else { %>
+      <p><strong>IMPORTANT NOTICE:</strong> This information is only intended for UK patients who have been prescribed ADVATE or ADYNOVI by a healthcare professional.</p>
+      <p><strong>www.haemapatientresources.co.uk</strong> has been developed by Takeda UK Limited as an educational resource for people living with haemophilia A who have been prescribed ADVATE<sup>&reg;</sup> (octocog alfa) or ADYNOVI<sup>&reg;</sup> (rurioctocog alfa pegol) in the UK.</p>
     <% } %>
-    <p><strong>www.haemapatientresources.co.uk</strong> has been developed by Takeda UK Limited as an educational resource for people who have been prescribed ADVATE (octocog alfa) or ADYNOVI<sup>&reg;</sup> (rurioctocog alfa pegol) in the UK.</p>
-    <p>The information provided is not a substitute for professional and/or medical advice. Please consult a healthcare professional or your haemophilia treatment centre for further advice.</p>
+
+    <p>The information provided is not a substitute for professional and / or medical advice. Please consult a healthcare professional or your haemophilia treatment centre for further advice.</p>
     <div class="box">
-      <p>&#9660; This medicine is subject to additional monitoring. This will allow quick identification of new safety information. You can help by reporting any side eﬀects you may get. If you get any side eﬀects, talk to your doctor, pharmacist or nurse. This includes any possible side eﬀects not listed on this website or in the package leaﬂet. You can report side eﬀects directly via the Yellow Card Scheme at: <a href="https://www.mhra.gov.uk/yellowcard">www.mhra.gov.uk/yellowcard</a> or search for MHRA Yellow Card in the Google Play or Apple App Store.</p>
-      <p>By reporting side eﬀects you can help provide more information on the safety of these medicines.</p>
+      <% if (path !== '/advate' && path !== '/advate-resources') { %>
+        <p>&#9660; This medicine is subject to additional monitoring. This will allow quick identification of new safety information. You can help by reporting any side effects you may get.</p>
+      <% } %>
+      <p><strong>Reporting of side effects:</strong><br />
+      If you get any side effects, talk to your doctor, pharmacist or nurse. This includes any possible side effects not listed on this website or in the package leaflet. You can report side effects directly via the Yellow Card Scheme at: <a href="https://www.mhra.gov.uk/yellowcard">www.mhra.gov.uk/yellowcard</a> or search for MHRA Yellow Card in the Google Play or Apple App Store.<br />
+      By reporting side effects you can help provide more information on the safety of these medicines.</p>
+    </div>
+    <div class="content">
+      <p>This site uses cookies. By continuing to browse the site, you are agreeing to our use of cookies. <a href="https://www.takeda.com/en-gb/privacy-notice/">Find out more.</a></p>
     </div>
     <div>
       <p>C-ANPROM/GB/ADV/0010 March 2022</p>
       <p class="copyright">Initiated and funded by Takeda UK Ltd. &copy; <span>year</span> Takeda Pharmaceutical Company Limited. All rights reserved.</p>
       <p>Takeda and the Takeda Logo are trademarks of Takeda Pharmaceutical Company Limited, used under license.</p>
+      <p>The copyright and ownership of this website reside with: Takeda UK Limited, 1 Kingdom St, London W2 6BD, United Kingdom.</p>
     </div>
   </div>
   <img src="images/takeda-dakiyama.svg" alt="Takeda Logo" title="Takeda Logo" width="200px" height="111px" />
