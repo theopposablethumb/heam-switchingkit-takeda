@@ -1,7 +1,6 @@
 <%- include('includes/head.ejs') %>
 <%- include('includes/navigation.ejs') %>
 
-<%- include('includes/external-dialog.ejs') %>
 <main>
 
   <div class="hero">
@@ -11,17 +10,17 @@
   <div class="content">
     <div class="twoThirds">
       <h1>ADVATE<sup>&reg;</sup> (octocog alfa) – for the treatment of haemophilia A</h1>
-      <p>You have been prescribed ADVATE, which is used for the treatment and preventative treatment (prophylaxis) of bleeding in people with haemophilia A (congenital factor VIII deficiency). ADVATE can be used in both children and adults.</p>
-      <p>These materials provide further information about ADVATE and how it works as a treatment and prophylactic (preventative) treatment of haemophilia A. For example, the <em>Giving Yourself Factor</em> video demonstrates the administration technique step-by-step. In addition, it also features a child and a teenager who share their experience about learning to self-infuse.</p>
+      <p>You have been prescribed ADVATE, which is used for the treatment and preventative treatment (prophylaxis) of bleeding in people with <span class="orphan">haemophilia A</span> (congenital factor VIII deficiency). ADVATE can be used in both children and adults.</p>
+      <p>These materials provide further information about ADVATE and how it works as a treatment and prophylactic (preventative) treatment of <span class="orphan">haemophilia A.</span> For example, the <em>Giving Yourself Factor</em> video demonstrates the administration technique step-by-step. In addition, it also features a child and a teenager who share their experience about learning to self-infuse.</p>
       <p>Information provided in these materials is not a substitute for the Patient Information Leaflet (PIL) which is provided with your medicine. Please ensure that you read the PIL.</p>
       <p>The PIL can be accessed as follows:</p>
       <p><strong>For England, Wales & Scotland via these links:</strong></p>
-      <p><a href="https://www.medicines.org.uk/emc/product/9188/pil">ADVATE 250 IU and 500 IU powder and solvent for solution for injection 2 ml solvent</a></p>
-      <p><a href="https://www.medicines.org.uk/emc/product/9189/pil">ADVATE 250 IU, 500 IU, 1000 IU, 1500 IU, 2000 IU and 3000 IU powder and solvent for solution for injection 5 ml solvent</a></p>
+      <p><a data-destination="ADVATE Patient Information Leaflet" href="https://www.medicines.org.uk/emc/product/9188/pil">ADVATE 250 IU and 500 IU powder and solvent for solution for injection 2 ml solvent</a></p>
+      <p><a data-destination="ADVATE Patient Information Leaflet" href="https://www.medicines.org.uk/emc/product/9189/pil">ADVATE 250 IU, 500 IU, 1000 IU, 1500 IU, 2000 IU and 3000 IU powder and solvent for solution for injection 5 ml solvent</a></p>
       <p><strong>For Northern Ireland via:</strong></p>
-      <p><a href="https://www.emcmedicines.com/en-gb/northernireland/medicine?id=f43d1723-d337-4048-945a-5750385fc230&type=pil">ADVATE 250 IU powder and solvent for solution for injection 2 ml solvent</a></p>
-      <p><a href="https://www.emcmedicines.com/en-gb/northernireland/medicine?id=1c3d82b4-f0f5-4f6b-9337-b5c1007b4fb7&type=pil">ADVATE 250 IU powder and solvent for solution for injection 5 ml solvent</a></p>
-      <p>The information provided is general educational information and does not take the place of professional medical advice. Always follow your doctor or nurse’s instructions and talk with them about any questions or problems you have regarding your health and treatment.</p>
+      <p><a data-destination="ADVATE Patient Information Leaflet" href="https://www.emcmedicines.com/en-gb/northernireland/medicine?id=f43d1723-d337-4048-945a-5750385fc230&type=pil">ADVATE 250 IU powder and solvent for solution for injection 2 ml solvent</a></p>
+      <p><a data-destination="ADVATE Patient Information Leaflet" href="https://www.emcmedicines.com/en-gb/northernireland/medicine?id=1c3d82b4-f0f5-4f6b-9337-b5c1007b4fb7&type=pil">ADVATE 250 IU powder and solvent for solution for injection 5 ml solvent</a></p>
+      <p>The information provided on this site is general educational information and does not take the place of professional medical advice. Always follow your doctor or nurse’s instructions and talk with them about any questions or problems you have regarding your health and treatment.</p>
     </div>
   </div>
 
@@ -81,6 +80,7 @@
     </div>
 
   </div>
-
+  <%- include('includes/external-dialog.ejs') %>
+  <%- include('includes/patient-dialog.ejs') %>
 </main>
 <%- include('includes/footer.ejs') %>

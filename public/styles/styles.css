@@ -18,13 +18,17 @@ a.button:hover, p.button:hover { background: #891515;}
 .button.ghost:hover { border: 2px solid #e1242a; background: #e1242a; color: #fff; border: none; }
 .red { color: #e1242a; }
 
+.dialog a.internal { display: inline-block; padding: 1em 0.5em; margin-top: 1.6em; }
+
 .button span { color: #fff; }
-sup { font-size: 0.5em; padding-bottom: 0.5em; display: inline-block; line-height: 1.4em; }
+sup { font-size: 0.5em; padding-bottom: 0.5em; display: inline-block; line-height: 1.4em; position: relative; bottom: 0.25em; }
+.orphan { display: inline-block; }
 
 header, .hero, .content { margin: 0 auto; max-width: 1200px; width: 80vw; }
 .content { margin-top: 2.5em; }
 footer { margin-top: 3em; padding: 0 1.4em 1em 1.4em; border-left: 0.6em solid #e1242a; }
 
+header img { position: relative; z-index: 2; }
 header button { display: none; }
 nav { float: right; }
 nav a { display: inline-block; padding: 1.5em 0.8em; text-decoration: none; color: #222; }
@@ -95,15 +99,18 @@ footer .box p { font-size: 0.8em; }
   to { opacity: 1; }
 }
 
-.backdrop { position: fixed; z-index: 1;top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.5); animation-name: darken; animation-duration: 0.2s; backdrop-filter: blur(2px); }
+.backdrop { position: fixed; z-index: 1; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.65); animation-name: darken; animation-duration: 0.2s; backdrop-filter: blur(2px); }
 .dialog, div.video { position: fixed; z-index: 2; top: 6em; left: 50%; transform: translate(-50%, 0); box-shadow:  0 12px 12px 0 rgba(0, 0, 0, 0.15); animation-name: appear; animation-duration: 0.1s; opacity: 1; width: fit-content; height: fit-content; }
 div.video { padding: 0; }
 div.video .close { position: absolute; top: 0; right: 1em; color: #fff; text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5); }
 .dialog { width: 45vw; box-sizing: border-box; background: #f7f7f7; border-radius: 4px; padding: 3em; text-align: center; padding: 2em; }
+.patient.dialog { box-shadow: none;}
 .dialog h3 { margin: 0 0 1em 0; }
 .dialog .flex { justify-content: space-around; }
 .dialog .button { width: 45%; padding: 1em 0.5em; vertical-align: text-center; }
 .dialog p.link.button { margin-top: 1em; }
+
+.curtain { position: fixed; z-index: 1; top: 0; left: 0; width: 100vw; height: 100vh; background: #f7f7f7; }
 
 footer { position: relative; }
 footer div { width: 75%; }
@@ -119,6 +126,9 @@ footer .box, .box.ade { border-color: #222; box-shadow: none; width: 95%; paddin
 .box.ade p { font-size: 1em; }
 .box.ade p:first-child { margin-top: 0; }
 
+footer.sticky { position: fixed; bottom: 0; z-index: 2; width: 100vw; box-sizing: border-box; }
+footer.sticky .box, footer.sticky p:first-of-type, footer.sticky p:nth-of-type(1), footer.sticky p:nth-of-type(2), footer.sticky p:nth-of-type(3) { display: none; }
+
 @media screen and (max-width: 1600px) {
   .hs img { width: 14%; margin-left: 6%; }
 }
@@ -130,6 +140,7 @@ footer .box, .box.ade { border-color: #222; box-shadow: none; width: 95%; paddin
 }
 
 @media screen and (max-width: 1380px) {
+  nav a { padding: 1.5em 0.4em; }
   .hs div { width: 65%; }
   .hs img { width: 16%; margin: 2% 4% 0 15%; }
   .actions { width: 30%; }
@@ -162,14 +173,7 @@ footer .box, .box.ade { border-color: #222; box-shadow: none; width: 95%; paddin
   .dialog { width: 70vw; }
 }
 
-@media screen and (max-width: 900px) {
-  .hs.flex { display: block; }
-  .hs.full { background: none; position: relative; padding: 0; }
-  .hs div { width: 100%; padding: 0.8em 1.6em 1.6em; box-sizing: border-box; }
-  .hs img { width: 100%; height: 100px; border-radius: 12px 12px 0 0; padding: 4em 0; margin: 0; display: block; background: #C41718; }
-
-  header, .hero, .content { margin: 0 auto; width: 100vw; }
-
+@media screen and (max-width: 1030px) {
   header { position: relative; }
   header button { position: absolute; top: 1.75em; right: 2em; border: none; height: 1.5em; width: 2.5em; display: block;
     background: linear-gradient(
@@ -205,15 +209,36 @@ footer .box, .box.ade { border-color: #222; box-shadow: none; width: 95%; paddin
     to { height: 16em; }
   }
 
+  @keyframes showTall {
+    from { height: 0; }
+    to { height: 21.2em; }
+  }
+
   @keyframes hide {
     from { height: 16em; }
     to { height: 0; }
   }
 
+  @keyframes hideTall {
+    from { height: 21.2em; }
+    to { height: 0; }
+  }
+
   header nav { width: 100vw; height: 0; overflow: hidden; }
   header nav.show { height: 16em; overflow: visible; animation-name: show; animation-duration: 0.2s; }
+  header nav.show.tall { height: 21.2em; animation-name: showTall; animation-duration: 0.2s; }
   header nav.hide { animation-name: hide; animation-duration: 0.2s; }
+  header nav.hide.tall { animation-name: hideTall; animation-duration: 0.2s; }
   header nav a { display: block; border: 1px solid #edf2f4; text-align: right; padding: 1em 5vw; }
+}
+
+@media screen and (max-width: 900px) {
+  .hs.flex { display: block; }
+  .hs.full { background: none; position: relative; padding: 0; }
+  .hs div { width: 100%; padding: 0.8em 1.6em 1.6em; box-sizing: border-box; }
+  .hs img { width: 100%; height: 100px; border-radius: 12px 12px 0 0; padding: 4em 0; margin: 0; display: block; background: #C41718; }
+
+  header, .hero, .content { margin: 0 auto; width: 100vw; }
 
   h1 { font-size: 1.6em; margin-bottom: 1.2em; }
   p.intro { font-size: 1.4em; }
@@ -227,6 +252,8 @@ footer .box, .box.ade { border-color: #222; box-shadow: none; width: 95%; paddin
   .tile, .full, .half, .twoThirds, .thirds { width: 100%; }
   .thirds { margin-right: 0; margin-top: 0; }
   .thirds.box:first-of-type { margin-top: 2.4em; }
+  .thirds.box { padding-bottom: 2.5em; }
+  .thirds.box:last-of-type { padding-bottom: 1em; }
   .half:nth-child(odd) { margin-right: 0; }
 
   .box { margin-bottom: 2em; }
@@ -244,6 +271,7 @@ footer .box, .box.ade { border-color: #222; box-shadow: none; width: 95%; paddin
   .thirds.box p { line-height: 1.4em; }
 
   .dialog, div.video { width: 90vw; box-sizing: border-box; }
+  .dialog { top: 10vh; height: 80vh; overflow: auto; }
   .dialog .button { width: 100%; padding: 1em 0.5em; vertical-align: text-center; }
   footer img { width: 100px; height: 55px; }
   footer nav a { padding: 0.6em 0.6em 0.6em 0}

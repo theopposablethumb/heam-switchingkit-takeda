@@ -1,7 +1,6 @@
 <%- include('includes/head.ejs') %>
 <%- include('includes/navigation.ejs') %>
 
-<%- include('includes/external-dialog.ejs') %>
 <main>
   <div class="hero">
     <img src="./images/father-and-son-cycling-hero.jpg" alt="Father and son cycling through a forest outdoors" title="Living with Haemophilia" />
@@ -12,7 +11,7 @@
       <h1>Resources for people living with haemophilia</h1>
       <p>Haemophilia is a complex disorder and you may have lots of questions about your condition, both when you are first diagnosed and also throughout your life with haemophilia.</p>
       <p>Your haemophilia treatment centre and the Haemophilia Society are here to support you. Takeda UK Limited have also developed the following resources to help you and your caregivers learn more about haemophilia.</p>
-      <p><strong>The guides below cover both haemophilia A and B and therefore, not all the information may be applicable to your condition.</strong></p>
+      <p><strong>The guides below cover both <span class="orphan">haemophilia A and B</span> and therefore, not all the information may be applicable to your condition.</strong></p>
     </div>
   </div>
 
@@ -25,8 +24,7 @@
         <div class="tile flex half">
           <img src="https://picsum.photos/150/200" alt="downloadable" title="download this" />
           <div>
-            <h2 class="red">Living with haemophilia: in the classroom.<br />
-              A teacher’s guide</h2>
+            <h2 class="red">Living with haemophilia: in the classroom. A teacher’s guide</h2>
             <p>A brief guide that can be shared with a patient’s teacher to support the management of haemophilia at school.</p>
             <p><a href="/somethng.pdf" class="action">View PDF</a></p>
           </div>
@@ -59,10 +57,11 @@
       <div>
         <h3>The Haemophilia Society</h3>
         <p>The Haemophilia Society is an active support group for people with haemophilia and their families, and provides lots of up-to-date information and individual support on the management and treatment of haemophilia, and about living with the condition. Many people with haemophilia gain great support from other patients. The Society also offers a unique opportunity for people affected by haemophilia to get in touch with other people in similar circumstances.</p>
-        <p>For further information about the Haemophilia Society, please visit: <a href="https://haemophilia.org.uk">https://haemophilia.org.uk</a></p>
+        <p>For further information about the Haemophilia Society, please visit: <a data-destination="Haemophilia Society" href="https://haemophilia.org.uk">https://haemophilia.org.uk</a></p>
       </div>
     </div>
   </div>
-
+  <%- include('includes/external-dialog.ejs') %>
+  <%- include('includes/patient-dialog.ejs') %>
 </main>
 <%- include('includes/footer.ejs') %>

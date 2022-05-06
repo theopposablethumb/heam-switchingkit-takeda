@@ -1,9 +1,11 @@
 <header>
-  <a href="/">
-    <img src="images/takeda-dakiyama.svg" alt="Takeda Logo" title="Takeda Logo" width="125px" height="70px" />
-  </a>
+  <img src="images/takeda-dakiyama.svg" alt="Takeda Logo" title="Takeda Logo" width="125px" height="70px" />
   <button></button>
-  <nav class="hide">
+  <% if (path === '/' || path === '/living-with-haemophilia') { %>
+    <nav class="hide tall">
+  <% } else { %>
+    <nav class="hide">
+  <% } %>
       <% menu.forEach(m => { %>
         <a href="<%= m.url %>" class="<%= m.url === path.replace('/', '') ? 'current' : '' %>">
           <%= m.name %>

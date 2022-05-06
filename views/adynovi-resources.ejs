@@ -1,8 +1,6 @@
 <%- include('includes/head.ejs') %>
 <%- include('includes/navigation.ejs') %>
 
-<%- include('includes/external-dialog.ejs') %>
-
 <main>
   <div class="hero">
     <img src="./images/father-and-son-playing.jpg" alt="Father and son playing outdoors" title="Resources for Advate" />
@@ -11,17 +9,17 @@
   <div class="content">
     <div class="twoThirds">
       <h1>ADYNOVI<sup>&reg;</sup>&#9660 (rurioctocog alfa pegol) – for the treatment of haemophilia A in adults and children over 12 years of age</h1>
-      <p>You have been prescribed ADYNOVI®, which is used for the treatment and preventative treatment (prophylaxis) of bleeding in people with haemophilia A (congenital factor VIII deficiency) aged 12 years or over.</p>
-      <p>These materials provide further information about ADYNOVI and how it works as a treatment and prophylactic (preventative) treatment of haemophilia A.</p>
+      <p>You have been prescribed ADYNOVI<sup>®</sup>, which is used for the treatment and preventative treatment (prophylaxis) of bleeding in people with <span class="orphan">haemophilia A</span> (congenital factor VIII deficiency) aged <span class="orphan">12 years</span> or over.</p>
+      <p>These materials provide further information about ADYNOVI and how it works as a treatment and prophylactic (preventative) treatment of <span class="orphan">haemophilia A.</span></p>
       <p>Information provided in these materials is not a substitute for the Patient Information Leaﬂet (PIL) which is provided with your medicine. Please ensure that you read the PIL.</p>
       <p>The PIL can be accessed as follows:</p>
       <p><strong>For England, Wales & Scotland via these links:</strong></p>
-      <p><a href="https://www.medicines.org.uk/emc/product/11155/pil">ADYNOVI 1000 IU powder and solvent for solution for injection 2 ml solvent</a></p>
-      <p><a href="https://www.medicines.org.uk/emc/product/11159/pil">ADYNOVI 2000 IU powder and solvent for solution for injection 5 ml solvent</a></p>
+      <p><a data-destination="ADYNOVI Patient Information Leaflet" href="https://www.medicines.org.uk/emc/product/11155/pil">ADYNOVI 1000 IU powder and solvent for solution for injection 2 ml solvent</a></p>
+      <p><a data-destination="ADYNOVI Patient Information Leaflet" href="https://www.medicines.org.uk/emc/product/11159/pil">ADYNOVI 2000 IU powder and solvent for solution for injection 5 ml solvent</a></p>
       <p><strong>For Northern Ireland via:</strong></p>
-      <p><a href="https://www.emcmedicines.com/en-gb/northernireland/medicine?id=9c6456a3-bbe2-4843-9d9a-ab4f2335ee02&type=pil">ADYNOVI 250 IU / 2 ml powder and solvent for solution for injection</a></p>
-      <p><a href="https://www.emcmedicines.com/en-gb/northernireland/medicine?id=48aa9d02-ebb9-4f61-8573-d0edfcfacdad&type=pil">ADYNOVI 2000 IU powder and solvent for solution for injection 5 ml solvent</a></p>
-      <p>The information provided is general educational information and does not take the place of professional medical advice. Always follow your doctor or nurse’s instructions and talk with them about any questions or problems you have regarding your health and treatment.</p>
+      <p><a data-destination="ADYNOVI Patient Information Leaflet" href="https://www.emcmedicines.com/en-gb/northernireland/medicine?id=9c6456a3-bbe2-4843-9d9a-ab4f2335ee02&type=pil">ADYNOVI 250 IU / 2 ml powder and solvent for solution for injection</a></p>
+      <p><a data-destination="ADYNOVI Patient Information Leaflet" href="https://www.emcmedicines.com/en-gb/northernireland/medicine?id=48aa9d02-ebb9-4f61-8573-d0edfcfacdad&type=pil">ADYNOVI 2000 IU powder and solvent for solution for injection 5 ml solvent</a></p>
+      <p>The information provided on this site is general educational information and does not take the place of professional medical advice. Always follow your doctor or nurse’s instructions and talk with them about any questions or problems you have regarding your health and treatment.</p>
     </div>
   </div>
 
@@ -72,6 +70,7 @@
     </div>
 
   </div>
-
+  <%- include('includes/external-dialog.ejs') %>
+  <%- include('includes/patient-dialog.ejs') %>
 </main>
 <%- include('includes/footer.ejs') %>

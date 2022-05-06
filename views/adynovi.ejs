@@ -1,8 +1,6 @@
 <%- include('includes/head.ejs') %>
 <%- include('includes/navigation.ejs') %>
 
-<%- include('includes/external-dialog.ejs') %>
-
 <main>
   <div class="hero">
     <img src="./images/father-and-son-playing.jpg" alt="Father and son playing outdoors" title="Resources for Advate"  />
@@ -10,11 +8,11 @@
 
   <div class="content">
     <div class="twoThirds">
-      <h1>ADYNOVI<sup>&reg;</sup>&#9660 (rurioctocog alfa pegol) – for the treatment of haemophilia A in adults and children over 12 years of age</h1>
+      <h1>ADYNOVI<sup>&reg;</sup>&#9660 (rurioctocog alfa pegol) – for the treatment of haemophilia A in adults and children over <span class="orphan">12 years</span> of age</h1>
       <p>Welcome to the ADYNOVI patient website.</p>
       <p>Your haemophilia treatment centre has provided you with access to this Takeda-developed website because they have prescribed ADYNOVI for you as a treatment or a preventative treatment (prophylaxis) for haemophilia A.</p>
       <p>ADYNOVI is an ‘extended half-life’ (or EHL) factor VIII treatment.</p>
-      <p>Other treatments for haemophilia A called ‘standard half-life’ (or SHL) factor VIII, stay in the blood for a relatively shorter time compared with EHL treatments. SHL factor treatments require repeat injections for prophylaxis (every 2-3 days for haemophilia A).</p>
+      <p>Other treatments for haemophilia A called ‘standard half-life’ (or SHL) factor VIII, stay in the blood for a relatively shorter time compared with EHL treatments. SHL factor treatments require repeat injections for prophylaxis (every 2-3 days for <span class="orphan">haemophilia A).</span></p>
       <p>ADYNOVI contains the active substance rurioctocog alfa pegol (pegylated human coagulation factor VIII). It has been modified to prolong its duration of action. This means that ADYNOVI stays in the blood for longer than with an SHL treatment and may reduce the number of injections needed.</p>
       <p>Here you will find information about haemophilia (including symptoms and key facts), support regarding your treatment with ADYNOVI, and sources of further advice and information.</p>
     </div>
@@ -24,18 +22,18 @@
     <div class="flex wrap">
 
       <div class="half box rounded">
-        <a href="./adyvoni-resources.html" class="action">ADYVONI patient resources</a>
+        <a href="./adynovi-resources" class="action">ADYNOVI patient resources</a>
       </div>
 
       <div class="half box rounded">
-        <a href="./living-with-haemophilia.html" class="action">Living with Haemophilia resources</a>
+        <a href="./living-with-haemophilia" class="action">Living with Haemophilia resources</a>
       </div>
 
     </div>
   </div>
   <div class="content">
     <div class="twoThirds">
-      <p>ADYNOVI is used for the treatment and prevention of bleeding in patients from 12 years of age with haemophilia A (an inherited bleeding disorder caused by lack of factor VIII).</p>
+      <p>ADYNOVI is used for the treatment and prevention of bleeding in patients from <span class="orphan">12 years</span> of age with <span class="orphan">haemophilia A</span> (an inherited bleeding disorder caused by lack of factor VIII).</p>
     </div>
   </div>
 
@@ -49,7 +47,7 @@
             <h2>The Haemophilia Society</h2>
             <p>The Haemophilia Society is an active support group for people with haemophilia and their families, and provides lots of up-to-date information and individual support on the management and treatment of haemophilia, and about living with the condition. Many people with haemophilia gain great support from other patients. The Society also offers a unique opportunity for people affected by haemophilia to get in touch with other people in similar circumstances.</p>
             <p>For further information about the Haemophilia Society:</p>
-            <a class="button" href="https://haemophilia.org.uk">Visit the Haemophilia Society Website</a>
+            <a class="button" data-destination="Haemophilia Society" href="https://haemophilia.org.uk">Visit the Haemophilia Society Website</a>
           </div>
         </div>
 
@@ -68,6 +66,7 @@
     </div>
 
   </div>
-
+  <%- include('includes/external-dialog.ejs') %>
+  <%- include('includes/patient-dialog.ejs') %>
 </main>
 <%- include('includes/footer.ejs') %>

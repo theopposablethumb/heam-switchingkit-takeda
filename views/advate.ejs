@@ -10,7 +10,7 @@
     <div class="twoThirds">
       <h1>ADVATE<sup>&reg;</sup> (octocog alfa) – for the treatment of haemophilia A</h1>
       <p>Welcome to the ADVATE patient website.</p>
-      <p>Your haemophilia treatment centre has provided you with access to this Takeda-developed website because they have prescribed ADVATE for you as a treatment or a preventative treatment (prophylaxis) for haemophilia A.</p>
+      <p>Your haemophilia treatment centre has provided you with access to this Takeda-developed website because they have prescribed ADVATE for you as a treatment or a preventative treatment (prophylaxis) for <span class="orphan">haemophilia A.</span></p>
       <p>Here you will find information about haemophilia (including symptoms and key facts), support regarding your treatment with ADVATE, and sources of further advice and information.</p>
     </div>
   </div>
@@ -19,11 +19,11 @@
     <div class="flex wrap">
 
       <div class="half box rounded">
-        <a href="./advate-resources.html" class="action">ADVATE patient resources</a>
+        <a href="./advate-resources" class="action">ADVATE patient resources</a>
       </div>
 
       <div class="half box rounded">
-        <a href="./living-with-haemophilia.html" class="action">Living with Haemophilia resources</a>
+        <a href="./living-with-haemophilia" class="action">Living with Haemophilia resources</a>
       </div>
 
     </div>
@@ -46,7 +46,7 @@
             <h2>The Haemophilia Society</h2>
             <p>The Haemophilia Society is an active support group for people with haemophilia and their families, and provides lots of up-to-date information and individual support on the management and treatment of haemophilia, and about living with the condition. Many people with haemophilia gain great support from other patients. The Society also offers a unique opportunity for people affected by haemophilia to get in touch with other people in similar circumstances.</p>
             <p>For further information about the Haemophilia Society:</p>
-            <a class="button" href="https://haemophilia.org.uk">Visit the Haemophilia Society Website</a>
+            <a class="button" data-destination="Haemophilia Society" href="https://haemophilia.org.uk">Visit the Haemophilia Society Website</a>
           </div>
         </div>
 
@@ -65,8 +65,8 @@
     </div>
 
   </div>
-
-<%- include('includes/external-dialog.ejs') %>
+  <%- include('includes/patient-dialog.ejs') %>
+  <%- include('includes/external-dialog.ejs') %>
 
 </main>
 <%- include('includes/footer.ejs') %>
