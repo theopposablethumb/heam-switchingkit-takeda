@@ -3,7 +3,12 @@
 
 <main>
   <div class="hero">
-    <img src="./images/father-and-son-cycling-hero.jpg" alt="Father and son cycling through a forest outdoors" title="Living with Haemophilia" />
+    <picture>
+      <source media="(min-width: 900px)" srcset="./images/young-man-jumping-full.jpg">
+      <source media="(min-width: 500px)" srcset="./images/young-man-jumping-half.jpg">
+      <source media="(min-width: 300px)" srcset="./images/young-man-jumping-mobile.jpg">
+      <img src="./images/young-man-jumping-full.jpg" alt="Young man jumping in front of a bright yellow painted wall" />
+    </picture>
   </div>
 
   <div class="content">
@@ -22,29 +27,35 @@
       <div class="flex wrap">
 
         <div class="tile flex half">
-          <img src="https://picsum.photos/150/200" alt="downloadable" title="download this" />
+          <figure>
+            <img src="./images/living-with-haemophilia-teachers-guide.jpg" alt="Teachers guide to supporting patients with Haemophilia in the classroom" title="Download PDF" width="150px" height="200px" />
+          </figure>
           <div>
             <h2 class="red">Living with haemophilia: in the classroom. A teacher’s guide</h2>
             <p>A brief guide that can be shared with a patient’s teacher to support the management of haemophilia at school.</p>
-            <p><a href="/somethng.pdf" class="action">View PDF</a></p>
+            <p><a href="./docs/living-with-haemophilia-in-the-classroom-teachers-guide-2020.pdf" class="action" target="_blank" rel="noopener">View PDF</a></p>
           </div>
         </div>
 
         <div class="tile flex half">
-          <img src="https://picsum.photos/150/200" alt="downloadable" title="download this" />
+          <figure>
+            <img src="./images/living-with-haemophilia-parents-guide.jpg" alt="Parents guide to supporting children with Haemophilia" title="Download PDF" width="150px" height="200px" />
+          </figure>
           <div>
             <h2 class="red">Living with haemophilia: at home. A parent’s guide to factor infusion</h2>
             <p>A brief guide to factor infusion for parents or carers of children with haemophilia.</p>
-            <p><a href="/somethng.pdf" class="action">View PDF</a></p>
+            <p><a href="./docs/living-with-haemophilia-at-home-parents-guide-2020.pdf" class="action" target="_blank" rel="noopener">View PDF</a></p>
           </div>
         </div>
 
         <div class="tile flex half">
-          <img class="video" src="https://picsum.photos/250/350" alt="downloadable" title="download this" />
-          <div>
+          <figure>
+            <img class="video" src="./images/living-with-haemophilia-guide-mild-moderate-haemophilia.jpg" alt="Living with mild and moderate haemophilia" title="Download PDF" width="150px" height="200px" />
+          </figure>
+            <div>
             <h2 class="red">Living with haemophilia: A guide to mild and moderate haemophilia</h2>
             <p>A brief guide for patients, carers or parents of children with mild or moderate haemophilia.</p>
-            <p><a href="/somethng.pdf" class="action">View PDF</a></p>
+            <p><a href="./docs/adt01750-livin-with-haemophilia-guide-to-mild-to-moderate-haemophilia.pdf" class="action" target="_blank" rel="noopener">View PDF</a></p>
           </div>
         </div>
       </div>

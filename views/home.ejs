@@ -3,7 +3,13 @@
 
 <main>
   <div class="hero">
-    <img src="./images/man-kayaking-hero.jpg" alt="hero image" title="something or other" />
+    <picture>
+      <source media="(min-width: 900px)" srcset="./images/man-canoing-full.jpg">
+      <source media="(min-width: 500px)" srcset="./images/man-canoing-half.jpg">
+      <source media="(min-width: 300px)" srcset="./images/man-canoing-mobile.jpg">
+      <img src="./images/man-canoing-full.jpg" alt="Man in a canoe paddling in a river" />
+    </picture>
+
   </div>
 
   <div class="content">
@@ -27,7 +33,7 @@
       </div>
       <div class="thirds box rounded">
         <p>I have not been prescribed ADYNOVI or ADVATE or I do not live in the UK</p>
-        <a href="https://haemophilia.org.uk" class="button">Enter</a>
+        <a data-destination="Haemophilia Society" href="https://haemophilia.org.uk" class="button">Enter</a>
         <p class="small">By selecting this option, you will be directed to the Haemophilia Society website.</p>
       </div>
     </div>

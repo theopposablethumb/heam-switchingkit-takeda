@@ -3,7 +3,12 @@
 
 <main>
   <div class="hero">
-    <img src="./images/father-and-son-playing.jpg" alt="Father and son playing outdoors" title="Resources for Advate" />
+    <picture>
+      <source media="(min-width: 900px)" srcset="./images/man-in-garden-full.jpg">
+      <source media="(min-width: 500px)" srcset="./images/man-in-garden-half.jpg">
+      <source media="(min-width: 300px)" srcset="./images/man-in-garden-mobile.jpg">
+      <img src="./images/man-in-garden-full.jpg" alt="Man holding a basket full of vegetables in a garden" />
+    </picture>
   </div>
 
   <div class="content">
@@ -31,38 +36,44 @@
 
         <div class="tile flex half">
           <figure>
-            <img src="https://picsum.photos/150/200" alt="downloadable" title="download this" />
+            <img src="./images/guide-adynovi-patient-leaflet.jpg" alt="Guide to ADYNOVI" title="Download PDF" width="150px" height="200px" />
           </figure>
           <div>
             <h2 class="red">Your guide to ADYNOVI</h2>
             <p>Important things to know about storing and using ADYNOVI, and the ready-to-use reconstitution system (BAXJECT III).</p>
-            <p><a href="/somethng.pdf" class="action">View PDF</a></p>
+            <p><a href="./docs/your-guide to adynovi-patient-leavepiece-2021.pdf" class="action" target="_blank" rel="noopener">View PDF</a></p>
           </div>
         </div>
 
         <div class="tile flex half">
           <figure>
-            <img src="https://picsum.photos/150/200" alt="downloadable" title="download this" />
+            <img src="./images/adynovi-reconstitution-administration-guide.jpg" alt="Reconstituting and Administering ADYNOVI guide" title="Download PDF" width="150px" height="200px" />
           </figure>
           <div>
             <h2 class="red">Your guide to reconstituting and administering ADYNOVI</h2>
             <p>A simple 4-step guide to reconstituting and administering ADYNOVI.</p>
-            <p><a href="/somethng.pdf" class="action">View PDF</a></p>
+            <p><a href="./docs/adynovi-reconstitution-administration-guide.pdf" class="action" target="_blank" rel="noopener">View PDF</a></p>
           </div>
         </div>
 
         <div class="tile flex half">
           <figure class="video">
-            <img src="https://picsum.photos/250/350" alt="downloadable" title="download this" />
+            <picture>
+              <source media="(min-width: 900px)" srcset="./images/adynovi-reconstitution-patient-video-vert.jpg">
+              <source media="(min-width: 600px)" srcset="./images/adynovi-reconstitution-patient-video-900.jpg" />
+              <source media="(min-width: 300px)" srcset="./images/adynovi-reconstitution-patient-video-600.jpg" />
+              <img src="./images/giving-yourself-factor-video.jpg" alt="Giving yourself factor video" title="Watch video" />
+            </picture>
           </figure>
           <div>
             <h2 class="red">Ready-to-use reconstitution system (BAXJECT III) video</h2>
             <p>Watch how to use the BAXJECT III reconstitution system.</p>
-            <p><a href="/somethng" class="action">Watch video</a></p>
+            <p><a class="action video">Watch video</a></p>
           </div>
           <div class="video hidden">
-            <p class="close">X</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/4WPABn0pQVY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p class="close"></p>
+            <video-js data-account="3871979161001" data-player="cvx7vLnH4" data-embed="default" controls="" data-video-id="6306254646112" data-playlist-id="" data-application-id="" class="vjs-fluid"></video-js>
+            <script src="https://players.brightcove.net/3871979161001/cvx7vLnH4_default/index.min.js"></script>
           </div>
         </div>
         </div>

@@ -18,7 +18,7 @@ a.button:hover, p.button:hover { background: #891515;}
 .button.ghost:hover { border: 2px solid #e1242a; background: #e1242a; color: #fff; border: none; }
 .red { color: #e1242a; }
 
-.dialog a.internal { display: inline-block; padding: 1em 0.5em; margin-top: 1.6em; }
+.dialog a.goAway { display: inline-block; padding: 1em 0.5em; margin-top: 1.6em; }
 
 .button span { color: #fff; }
 sup { font-size: 0.5em; padding-bottom: 0.5em; display: inline-block; line-height: 1.4em; position: relative; bottom: 0.25em; }
@@ -69,18 +69,32 @@ footer .box p { font-size: 0.8em; }
 
 .tile { background: #f7f7f7; }
 .resources .tile div { padding: 0.8em; }
+.resources .tile div video-js div { padding: 0; }
 .tile h2, .warning h2 { margin: 0; }
 .tile h2 { border: none; padding: 0; }
-.tile figure { margin: 1em; }
-.tile figure.video {margin: 0; }
-.tile img { border-radius: 2px; box-shadow: 2px 3px 3px 0 rgba(0, 0, 0, 0.15); }
-.tile .video img, .tile img[src$=".svg"] { box-shadow: none; border: none; }
+.tile figure { margin: 1em 2.5em 1em 2em; }
+.tile figure.video { margin: 0; position: relative; }
+
+@keyframes brightness {
+  from { filter: brightness(100%); }
+  to { filter: brightness(50%); }
+}
+
+.tile figure.video img { filter: brightness(100%); }
+.tile figure.video:hover { cursor: pointer; }
+.tile figure.video:hover img { filter: brightness(50%); animation-name: brightness; animation-duration: 0.2s;}
+
+.tile img { border-radius: 2px; box-shadow: 2px 3px 3px 0 rgba(0, 0, 0, 0.15); display: block; }
+.tile img[src$=".svg"] { box-shadow: none; border: none; }
+.tile .video img { box-shadow: none; border-radius: 12px 2px 2px 12px;}
+.tile figure.video::after { content: ' '; width: 3em; height: 3em; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: url('../images/play-video-icon.svg') center no-repeat; }
 .tile img[src$='.svg'] { height: 6em; margin-bottom: 1.6em; }
 .tile a.button { text-transform: uppercase; padding: 0.8em 1.6em; }
 .tile a.action { display: inline-block; position: relative; padding: 0.2em 2em 0.2em; text-transform: uppercase; text-decoration: none; font-weight: 600; color: #222; }
 .tile a.action::before { content: ''; display: block; height: 1.4em; width: 1.4em; position: absolute; top: 0.3em; left: 0; background: url('../images/video-icon.svg'); }
 .tile a.action[href$='.pdf']::before { background: url('../images/download-icon.svg'); }
 .tile a.action:hover, footer nav a:hover { text-decoration: underline; color: #e1242a; }
+.tile a.action:hover { cursor: pointer; }
 
 .hs { background: url('../images/heamophilia-society-logo-splash.svg') no-repeat center right; flex-direction: row-reverse; }
 .hs div { width: 80%; }
@@ -99,12 +113,20 @@ footer .box p { font-size: 0.8em; }
   to { opacity: 1; }
 }
 
-.backdrop { position: fixed; z-index: 1; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.65); animation-name: darken; animation-duration: 0.2s; backdrop-filter: blur(2px); }
-.dialog, div.video { position: fixed; z-index: 2; top: 6em; left: 50%; transform: translate(-50%, 0); box-shadow:  0 12px 12px 0 rgba(0, 0, 0, 0.15); animation-name: appear; animation-duration: 0.1s; opacity: 1; width: fit-content; height: fit-content; }
-div.video { padding: 0; }
-div.video .close { position: absolute; top: 0; right: 1em; color: #fff; text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5); }
+.backdrop { position: fixed; z-index: 3; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.65); animation-name: darken; animation-duration: 0.2s; backdrop-filter: blur(2px); }
+.dialog, div.video { position: fixed; z-index: 4; top: 50%; left: 50%; transform: translate(-50%, -50%); box-shadow:  0 12px 12px 4px rgba(0, 0, 0, 0.25); animation-name: appear; animation-duration: 0.1s; opacity: 1; }
+.dialog.link { z-index: 5; }
+div.video { width: 75vw; max-width: 960px; }
+.resources .tile div.video { padding: 0; }
+video-js { border-radius: 4px; }
+div.video .close { position: absolute; top: 0.5em; right: 1em; height: 3em; width: 3em; }
+div.video .close::before, div.video .close::after { position: absolute; z-index: 5; content: ''; width: 20px; height: 2px; background: #fff; top: 0; right: 0; color: #fff; text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5); }
+div.video .close:hover { cursor: pointer; }
+div.video .close::before { transform: rotate(45deg); }
+div.video .close::after { transform: rotate(-45deg); }
+
 .dialog { width: 45vw; box-sizing: border-box; background: #f7f7f7; border-radius: 4px; padding: 3em; text-align: center; padding: 2em; }
-.patient.dialog { box-shadow: none;}
+.patient.dialog { box-shadow: none; position: absolute; }
 .dialog h3 { margin: 0 0 1em 0; }
 .dialog .flex { justify-content: space-around; }
 .dialog .button { width: 45%; padding: 1em 0.5em; vertical-align: text-center; }
@@ -126,8 +148,9 @@ footer .box, .box.ade { border-color: #222; box-shadow: none; width: 95%; paddin
 .box.ade p { font-size: 1em; }
 .box.ade p:first-child { margin-top: 0; }
 
-footer.sticky { position: fixed; bottom: 0; z-index: 2; width: 100vw; box-sizing: border-box; }
-footer.sticky .box, footer.sticky p:first-of-type, footer.sticky p:nth-of-type(1), footer.sticky p:nth-of-type(2), footer.sticky p:nth-of-type(3) { display: none; }
+/* footer.sticky { position: fixed; bottom: 0vh; z-index: 2; width: 100vw; box-sizing: border-box; } */
+footer.sticky { z-index: 2; position: absolute; bottom: -40vh; }
+/* footer.sticky .box, footer.sticky p:first-of-type, footer.sticky p:nth-of-type(1), footer.sticky p:nth-of-type(2), footer.sticky p:nth-of-type(3) { display: none; } */
 
 @media screen and (max-width: 1600px) {
   .hs img { width: 14%; margin-left: 6%; }
@@ -264,8 +287,10 @@ footer.sticky .box, footer.sticky p:first-of-type, footer.sticky p:nth-of-type(1
 
   .tile { display: block; margin-top: 0; }
   .tile a.button { text-align: center; }
-  .tile img { display: block; margin: 0.8em 0; }
-  .tile img.video { display: block; margin: 0.8em auto; } /* need a wrapper here to make video image change aspect ratio */
+  .tile img { display: block; margin: 0.8em auto; }
+  .tile figure.video { width: 100%; }
+  .tile .video picture { display: block; margin: 0; height: 100%; width: 100%; display: flex; }
+  .tile .video picture source, .tile .video picture img { height: auto; width: 100%; border-radius: 12px 12px 2px 2px; margin: 0; }
   .column:last-child, .tile:nth-child(odd) { margin-right: auto; }
 
   .thirds.box p { line-height: 1.4em; }

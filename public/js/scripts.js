@@ -37,7 +37,7 @@ const externalLinkWarning = () => {
 }
 
 const closeExternalLinkWarning = () => {
-  const dialog = document.querySelector('.dialog');
+  const dialog = document.querySelector('.dialog.link');
   const back =  dialog.querySelector('a.close');
   const externalLink = dialog.querySelector('a');
   const displayLink = dialog.querySelector('a span');
@@ -54,8 +54,8 @@ const closeExternalLinkWarning = () => {
 
 const video = () => {
   const link = document.querySelectorAll('.tile a.video');
+  const thumb = document.querySelectorAll('.tile figure.video');
   const closeVideo = document.querySelectorAll('div.video .close');
-
   link.forEach((a) =>
     a.addEventListener('click', (e) => {
       e.preventDefault();
@@ -65,13 +65,25 @@ const video = () => {
       dimBackground();
     })
   );
-
+  thumb.forEach((a) =>
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      const video = e.target.parentElement.parentElement.nextElementSibling.nextElementSibling;
+      video.classList.remove('hidden');
+      video.classList.add('show');
+      dimBackground();
+    })
+  );
+  const vid = document.querySelector('video-js');
   closeVideo.forEach((c) =>
     c.addEventListener('click', (e) => {
       const video = e.target.parentElement;
       video.classList.add('hidden');
       video.classList.remove('show');
       document.querySelector('.backdrop').classList.add('hidden');
+      if (vid.player.hasStarted()) {
+        vid.player.pause();
+      }
     })
   );
 }
@@ -109,9 +121,11 @@ const patientPrompt = () => {
   const dialog = document.querySelector('.dialog.patient');
   const confirm = document.querySelector('.patient .button');
   const footer = document.querySelector('footer');
+  const content = document.querySelectorAll('.content');
 
   curtain.classList.remove('hidden');
   dialog.classList.remove('hidden');
+  content.forEach( c => c.classList.add('hidden') );
   footer.classList.add('sticky');
 
   confirm.addEventListener('click', (e) => {
@@ -119,6 +133,7 @@ const patientPrompt = () => {
     dialog.classList.add('hidden');
     curtain.classList.add('hidden');
     footer.classList.remove('sticky');
+    content.forEach( c => c.classList.remove('hidden') );
     createCookie(1);
   })
 }

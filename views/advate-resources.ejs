@@ -4,7 +4,12 @@
 <main>
 
   <div class="hero">
-    <img src="./images/father-and-son-playing.jpg" alt="Father and son playing outdoors" title="Resources for Advate" />
+    <picture>
+      <source media="(min-width: 900px)" srcset="./images/man-and-child-playground-full.jpg">
+      <source media="(min-width: 500px)" srcset="./images/man-and-child-playground-half.jpg">
+      <source media="(min-width: 300px)" srcset="./images/man-and-child-playground-mobile.jpg">
+      <img src="./images/man-and-child-playground-full.jpg" alt="Child jumping into a man's arms in a playground" />
+    </picture>
   </div>
 
   <div class="content">
@@ -32,48 +37,54 @@
 
         <div class="tile flex half">
           <figure>
-            <img src="https://picsum.photos/150/200" alt="downloadable" title="download this" />
+            <img src="./images/guide-advate-patient-leaflet.jpg" alt="Your guide to Advate - PDF download" title="Download PDF" width="150px" height="200px" />
           </figure>
           <div>
             <h2 class="red">Your guide to ADVATE</h2>
             <p>Important things to know about storing and using ADVATE and BAXJECT II device for reconstitution.</p>
-            <p><a href="/somethng.pdf" class="action">View PDF</a></p>
+            <p><a href="./docs/your-guide-to-advate-advate-patient-leaflet.pdf" class="action" target="_blank" rel="noopener">View PDF</a></p>
           </div>
         </div>
 
         <div class="tile flex half">
           <figure>
-            <img src="https://picsum.photos/150/200" alt="downloadable" title="download this" />
+            <img src="./images/advate-recons-guide.jpg" alt="Your guide to reconstituting and administering Advate - PDF" title="Dowload PDF" width="150px" height="100px" />
           </figure>
           <div>
             <h2 class="red">Your guide to reconstituting and administering ADVATE</h2>
             <p>A simple 4-step guide to reconstituting and administering ADVATE.</p>
-            <p><a href="/somethng.pdf" class="action">View PDF</a></p>
+            <p><a href="./docs/advate-recons-guide.pdf" class="action" target="_blank" rel="noopener">View PDF</a></p>
           </div>
         </div>
 
         <div class="tile flex half">
           <figure class="video">
-            <img src="https://picsum.photos/250/350" alt="downloadable" title="download this" />
+            <picture>
+              <source media="(min-width: 900px)" srcset="./images/giving-yourself-factor-video-vert.jpg">
+              <source media="(min-width: 600px)" srcset="./images/giving-yourself-factor-video-900.jpg" />
+              <source media="(min-width: 300px)" srcset="./images/giving-yourself-factor-video-600.jpg" />
+              <img src="./images/giving-yourself-factor-video.jpg" alt="Giving yourself factor video" title="Watch video" />
+            </picture>
           </figure>
           <div>
             <h2 class="red">Giving yourself factor video (features young patient stories)</h2>
             <p>Watch a step-by-step guide to administering factor featuring a teenager and learn about a child’s own haemophilia treatment journey from him and his mum.</p>
-            <p><a href="/somethng" class="action">Watch video</a></p>
+            <p><a class="action video">Watch video</a></p>
           </div>
           <div class="video hidden">
-            <p class="close">X</p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/4WPABn0pQVY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p class="close"></p>
+            <video-js data-account="3871979161001" data-player="cvx7vLnH4" data-embed="default" controls="" data-video-id="6306254449112" data-playlist-id="" data-application-id="" class="vjs-fluid"></video-js>
+            <script src="https://players.brightcove.net/3871979161001/cvx7vLnH4_default/index.min.js"></script>
           </div>
         </div>
         <div class="tile flex half">
           <figure>
-            <img src="https://picsum.photos/150/200" alt="downloadable" title="download this" />
+            <img src="./images/giving-yourself-factor-2021.jpg" alt="Giving Yourself Factor - Patient Guide" title="Download PDF" width="150px" height="200px" />
           </figure>
           <div>
             <h2 class="red">Giving yourself factor (guide)</h2>
             <p>A step-by-step guide to administering factor treatment.</p>
-            <p><a href="/somethng.pdf" class="action">View PDF</a></p>
+            <p><a href="/./docs/giving-yourself-factor-2021-guide-for-patients-prescribed-factor.pdf" class="action" target="_blank" rel="noopener">View PDF</a></p>
           </div>
         </div>
       </div>

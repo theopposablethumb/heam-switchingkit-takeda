@@ -3,7 +3,12 @@
 
 <main>
   <div class="hero">
-    <img src="./images/father-and-son-playing.jpg" alt="Father and son playing outdoors" title="Resources for Advate"  />
+    <picture>
+      <source media="(min-width: 900px)" srcset="./images/man-and-child-playground-full.jpg">
+      <source media="(min-width: 500px)" srcset="./images/man-and-child-playground-half.jpg">
+      <source media="(min-width: 300px)" srcset="./images/man-and-child-playground-mobile.jpg">
+      <img src="./images/man-and-child-playground-full.jpg" alt="Child jumping into a man's arms in a playground" />
+    </picture>
   </div>
 
   <div class="content">
@@ -29,7 +34,7 @@
     </div>
     <div class="content">
       <div class="twoThirds">
-        <p>ADVATE is used for the treatment and prevention of bleeding in patients of all age groups with haemophilia A (an inherited bleeding disorder caused by lack of factor VIII).</p>
+        <p>ADVATE is used for the treatment and prevention of bleeding in patients of all age groups with <span class="orphan">haemophilia A</span> <span class="orphan">(an inherited</span> bleeding disorder caused by lack of factor VIII).</p>
       </div>
     </div>
   </div>
@@ -57,7 +62,7 @@
             <p>The We Bleed Differently (WBD) campaign has been initiated and funded by Takeda, and developed together with The Haemophilia Society.</p>
             <p>We Bleed Differently is a campaign to provide practical support tools for people with bleeding disorders and their care teams. We want to support people with bleeding disorders and healthcare professionals to have the discussions that enable people with bleeding disorders to live the life they want to. Takeda is delighted to be partnering with The Haemophilia Society in this campaign and their ongoing work to support, inform and inspire all members of the bleeding disorder community.</p>
             <p>For further information about the WBD campaign:</p>
-            <a class="button" href="https://www.webleeddifferently.co.uk">Visit the We Bleed Differently website</a>
+            <a class="button" data-destination="We Bleed Differently" href="https://www.webleeddifferently.co.uk">Visit the We Bleed Differently website</a>
           </div>
         </div>
       </div>
@@ -65,8 +70,8 @@
     </div>
 
   </div>
+
   <%- include('includes/patient-dialog.ejs') %>
   <%- include('includes/external-dialog.ejs') %>
-
 </main>
 <%- include('includes/footer.ejs') %>
