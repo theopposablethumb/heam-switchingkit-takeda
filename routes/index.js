@@ -11,7 +11,7 @@ const navigation = require('../util/navigation');
 Router.get('/', (req, res, next) => {
   res.render('home', {
     docTitle: 'Haemophilia Patient Website | Takeda',
-    menu: navigation.fullNav,
+    menu: navigation.noResourcesNav,
     path: '/'
   });
 });

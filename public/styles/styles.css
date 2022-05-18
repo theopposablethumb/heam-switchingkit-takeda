@@ -17,11 +17,12 @@ a.button, p.button { display: inline-block; border-radius: 2px; background: #e12
 a.button:hover, p.button:hover { background: #891515;}
 .button.ghost:hover { border: 2px solid #e1242a; background: #e1242a; color: #fff; border: none; }
 .red { color: #e1242a; }
+.triangle { color: #000; display: inline-block; position: relative; right: 1px; }
 
 .dialog a.goAway { display: inline-block; padding: 1em 0.5em; margin-top: 1.6em; }
 
 .button span { color: #fff; }
-sup { font-size: 0.5em; padding-bottom: 0.5em; display: inline-block; line-height: 1.4em; position: relative; bottom: 0.25em; }
+sup { font-size: 0.5em; padding-bottom: 0.5em; display: inline-block; line-height: 1.4em; position: relative; bottom: 1px; }
 .orphan { display: inline-block; }
 
 header, .hero, .content { margin: 0 auto; max-width: 1200px; width: 80vw; }
@@ -87,7 +88,7 @@ footer .box p { font-size: 0.8em; }
 .tile img { border-radius: 2px; box-shadow: 2px 3px 3px 0 rgba(0, 0, 0, 0.15); display: block; }
 .tile img[src$=".svg"] { box-shadow: none; border: none; }
 .tile .video img { box-shadow: none; border-radius: 12px 2px 2px 12px;}
-.tile figure.video::after { content: ' '; width: 3em; height: 3em; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: url('../images/play-video-icon.svg') center no-repeat; }
+.tile figure.video::after { content: ' '; pointer-events: auto; width: 3em; height: 3em; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: url('../images/play-video-icon.svg') center no-repeat; }
 .tile img[src$='.svg'] { height: 6em; margin-bottom: 1.6em; }
 .tile a.button { text-transform: uppercase; padding: 0.8em 1.6em; }
 .tile a.action { display: inline-block; position: relative; padding: 0.2em 2em 0.2em; text-transform: uppercase; text-decoration: none; font-weight: 600; color: #222; }
@@ -149,7 +150,7 @@ footer .box, .box.ade { border-color: #222; box-shadow: none; width: 95%; paddin
 .box.ade p:first-child { margin-top: 0; }
 
 /* footer.sticky { position: fixed; bottom: 0vh; z-index: 2; width: 100vw; box-sizing: border-box; } */
-footer.sticky { z-index: 2; position: absolute; bottom: -40vh; }
+footer.sticky { z-index: 2; position: absolute; bottom: -50vh; }
 /* footer.sticky .box, footer.sticky p:first-of-type, footer.sticky p:nth-of-type(1), footer.sticky p:nth-of-type(2), footer.sticky p:nth-of-type(3) { display: none; } */
 
 @media screen and (max-width: 1600px) {
@@ -168,6 +169,7 @@ footer.sticky { z-index: 2; position: absolute; bottom: -40vh; }
   .hs img { width: 16%; margin: 2% 4% 0 15%; }
   .actions { width: 30%; }
   .actions .button { padding: 0.75em 2em; }
+  footer.sticky { bottom: -80vh; }
 }
 
 @media screen and (max-width: 1200px) {
@@ -176,6 +178,7 @@ footer.sticky { z-index: 2; position: absolute; bottom: -40vh; }
   .hs div { width: 50%; }
   .hs img { width: 20%; margin: 2% 2% 0 28%; }
   .thirds { width: 31%; }
+  footer.sticky { bottom: -100vh; }
 }
 
 @media screen and (max-width: 1140px) {
@@ -297,13 +300,22 @@ footer.sticky { z-index: 2; position: absolute; bottom: -40vh; }
 
   .dialog, div.video { width: 90vw; box-sizing: border-box; }
   .dialog { top: 10vh; height: 80vh; overflow: auto; }
+  .dialog.patient { top: 50vh; height: 70vh; }
   .dialog .button { width: 100%; padding: 1em 0.5em; vertical-align: text-center; }
+  footer.sticky { bottom: -120vh; }
   footer img { width: 100px; height: 55px; }
   footer nav a { padding: 0.6em 0.6em 0.6em 0}
   footer div.box { margin: 1.6em 0; }
-
 }
 
 @media screen and (max-width: 600px) {
+  footer.sticky { bottom: -120vh; }
+}
 
+@media screen and (max-width: 500px) {
+  footer.sticky { bottom: -100vh; }
+}
+
+@media screen and (max-width: 400px) {
+  footer.sticky { bottom: -150vh; }
 }

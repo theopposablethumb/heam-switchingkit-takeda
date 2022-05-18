@@ -68,7 +68,9 @@ const video = () => {
   thumb.forEach((a) =>
     a.addEventListener('click', (e) => {
       e.preventDefault();
-      const video = e.target.parentElement.parentElement.nextElementSibling.nextElementSibling;
+      let video;
+      if (e.target.matches('img')) video = e.target.parentElement.parentElement.nextElementSibling.nextElementSibling;
+      if (e.target.matches('figure')) video = e.target.nextElementSibling.nextElementSibling;
       video.classList.remove('hidden');
       video.classList.add('show');
       dimBackground();
