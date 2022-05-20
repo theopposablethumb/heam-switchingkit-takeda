@@ -1,15 +1,40 @@
 <header>
   <img src="images/takeda-dakiyama.svg" alt="Takeda Logo" title="Takeda Logo" width="125px" height="70px" />
   <button></button>
-  <% if (path === '/' || path === '/living-with-haemophilia') { %>
-    <nav class="hide tall">
-  <% } else { %>
+  <p><%= prev %></p>
+  <% if ( ( path === '/' && prev === 'advate') || ( path === '/living-with-haemophilia' && prev === 'advate' ) ) { %>
     <nav class="hide">
-  <% } %>
-      <% menu.forEach(m => { %>
+      <% menu.advate.forEach(m => { %>
         <a href="<%= m.url %>" class="<%= m.url === path.replace('/', '') ? 'current' : '' %>">
           <%= m.name %>
         </a>
       <% }) %>
-  </nav>
+    </nav>
+    <% } else if ( ( path === '/' && prev === 'adynovi') || ( path === '/living-with-haemophilia' && prev === 'adynovi' ) ) { %>
+      <nav class="hide">
+        <% menu.adynovi.forEach(m => { %>
+          <a href="<%= m.url %>" class="<%= m.url === path.replace('/', '') ? 'current' : '' %>">
+            <%= m.name %>
+          </a>
+        <% }) %>
+      </nav>
+    <% } else if ( ( path === '/' && prev === 'adynovi') || ( path === '/living-with-haemophilia' && prev === 'adynovi' ) ) { %>
+    <% } else if ( ( path === '/' && ( prev !== 'adynovi' || prev !== 'advate' ) ) || ( path === '/living-with-haemophilia' && ( prev !== 'adynovi' || prev !== 'advate' ) ) ) { %>
+      <nav class="hide">
+        <% menu.default.forEach(m => { %>
+          <a href="<%= m.url %>" class="<%= m.url === path.replace('/', '') ? 'current' : '' %>">
+            <%= m.name %>
+          </a>
+        <% }) %>
+      </nav>
+
+  <% } else { %>
+    <nav class="hide">
+      <% menu.default.forEach(m => { %>
+        <a href="<%= m.url %>" class="<%= m.url === path.replace('/', '') ? 'current' : '' %>">
+          <%= m.name %>
+        </a>
+      <% }) %>
+    </nav>
+  <% } %>
 </header>

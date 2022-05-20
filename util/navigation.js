@@ -23,8 +23,6 @@ const adynoviNav = [
 
 const noResourcesNav = [
   {'name': 'Home', 'url': '/'},
-  // {'name': 'ADVATE', 'url': 'advate'},
-  // {'name': 'ADYNOVI', 'url': 'adynovi'},
   {'name': 'Living with haemophilia resources', 'url': 'living-with-haemophilia'},
 ];
 
