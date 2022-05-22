@@ -11,17 +11,17 @@ const advateNav = [
   {'name': 'Home', 'url': '/'},
   {'name': 'ADVATE', 'url': 'advate'},
   {'name': 'ADVATE resources', 'url': 'advate-resources'},
-  {'name': 'Living with haemophilia resources', 'url': 'living-with-haemophilia'},
+  {'name': 'Living with haemophilia resources', 'url': 'living-with-haemophilia-advate'},
 ];
 
 const adynoviNav = [
   {'name': 'Home', 'url': '/'},
   {'name': 'ADYNOVI', 'url': 'adynovi'},
   {'name': 'ADYNOVI resources', 'url': 'adynovi-resources'},
-  {'name': 'Living with haemophilia resources', 'url': 'living-with-haemophilia'},
+  {'name': 'Living with haemophilia resources', 'url': 'living-with-haemophilia-adynovi'},
 ];
 
-const noResourcesNav = [
+const defaultNav = [
   {'name': 'Home', 'url': '/'},
   {'name': 'Living with haemophilia resources', 'url': 'living-with-haemophilia'},
 ];
@@ -29,4 +29,4 @@ const noResourcesNav = [
 exports.fullNav = fullNav;
 exports.advateNav = advateNav;
 exports.adynoviNav = adynoviNav;
-exports.noResourcesNav = noResourcesNav;
+exports.defaultNav = defaultNav;
